@@ -1,20 +1,19 @@
 <?php
 
-class sucursal {
+class estado_pedido {
 // /////////////////////////
 // ATRIBUTOS
 // --------------------------------------------------------------
-    private $nro_sucursal=[];
+    private $nombre=["Solicitado","Confirmado","Enviado","Entregado","Rechazado"];
 // --------------------------------------------------------------
 
 // /////////////////////////
 // GETTERS Y SETTERS de los atributos.
 // --------------------------------------------------------------
-    public function getNroSucursal() {
-        return $this->nro_sucursal;
+    public function getNombre() {
+        return $this->nombre;
     }
 // --------------------------------------------------------------
-
 }
 
 ?>
