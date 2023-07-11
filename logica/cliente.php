@@ -66,7 +66,7 @@ public function validarTelefono($telefono) {
 // --------------------------------------------------------------
 public function validarEmail($email) {
     // No puede ser con otro formato que no sea @ejemplo.com
-    // ?
+    // 
 } 
 // --------------------------------------------------------------
 }

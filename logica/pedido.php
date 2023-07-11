@@ -2,7 +2,7 @@
 
 // El comando "self::" es para acceder a elementos estaticos de la clase.
 
-class pedido {
+class pedido { 
 // /////////////////////////
 // ATRIBUTOS
 // --------------------------------------------------------------
@@ -50,7 +50,7 @@ class pedido {
 // Funciones de la clase.
 // --------------------------------------------------------------
     public function validarFecha($fecha) {
-
+        // No puede ser  0 0 00 
     }
 // --------------------------------------------------------------
 }

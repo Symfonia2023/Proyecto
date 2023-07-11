@@ -2,7 +2,7 @@
 
 include 'cliente.php';
 
-class clienteWeb extends cliente {
+class clienteWeb extends cliente { // Clase HIJO
 // /////////////////////////
 // ATRIBUTOS
 // --------------------------------------------------------------
@@ -62,7 +62,6 @@ class clienteWeb extends cliente {
         }
     } 
 // --------------------------------------------------------------
-
 
 
 }
