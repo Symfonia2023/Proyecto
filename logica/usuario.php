@@ -5,19 +5,21 @@ class usuario {
 // ATRIBUTOS
 // --------------------------------------------------------------
     private $login;
-    private $contrasena;
+    private $contrasenia;
     private $rol;
 // --------------------------------------------------------------
+
 
 // /////////////////////////
 // CONSTRUCTOR
 // ----------------------------------------------------------------
     public function __construct($login,$contrasena,$rol) {
         $this->login=$login;
-        $this->contrasena=$contrasena;
+        $this->contrasenia=$contrasena;
         $this->rol=$rol;
     }
 // ----------------------------------------------------------------
+
 
 // /////////////////////////
 // GETTERS Y SETTERS de los atributos.
@@ -30,10 +32,10 @@ class usuario {
     }
 // --------------------------------------------------------------
     public function getContrasena() {
-        return $this->contrasena;
+        return $this->contrasenia;
     }
-    public function setContrasena($contrasena) {
-        $this->contrasena=$contrasena;
+    public function setContrasena($contrasenia) {
+        $this->contrasenia=$contrasenia;
     }
 // --------------------------------------------------------------
     public function getRol() {
@@ -48,33 +50,13 @@ class usuario {
 // Funciones de la clase.
 // --------------------------------------------------------------
 public function validarLogin($login) {
-
+    // Verificar si está en la base de datos
 } 
 // --------------------------------------------------------------
 public function validarContrasena($contrasena) {
-
+    // Verificar si la contraseña coincide con el login en la base de datos.
 } 
 // --------------------------------------------------------------
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ?>

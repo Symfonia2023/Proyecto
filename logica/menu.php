@@ -15,12 +15,13 @@ class menu {
     private $stock_maximo;
 // --------------------------------------------------------------
 
+
 // /////////////////////////
 // CONSTRUCTOR
 // --------------------------------------------------------------
-    public function __construct($nombre_menu,$precio,$tipo_menu,$stock_minimo,$stock_maximo) { // No se le agrega el atributo de la clase "id_menu" como parametro porque se lo asignará automaticamente.
+    public function __construct($nombre_menu,$precio,$tipo_menu,$stock_minimo,$stock_maximo) { // No se le agrega el atributo de la clase "id_menu" como parametro porque se lo asignará automáticamente.
 
-    $this->id_menu = self::$idAutomatico; // Asignar la ID automaticamente.
+    $this->id_menu = self::$idAutomatico; // Asignar la ID automáticamente.
     self::$idAutomatico++; // Incrementar el contador de ID's.
 
     $this->nombre_menu = $nombre_menu;
@@ -30,6 +31,7 @@ class menu {
     $this->stock_maximo = $stock_maximo;
     }
 // --------------------------------------------------------------
+
 
 // /////////////////////////
 // GETTERS Y SETTERS de los atributos.
@@ -49,6 +51,7 @@ class menu {
         return $this->precio;
     }
     public function setPrecio($precio) {
+        $this->validarPrecio($precio);
         $this->precio = $precio;
     }
 // --------------------------------------------------------------
@@ -56,6 +59,7 @@ class menu {
         return $this->tipo_menu;
     }
     public function setTipoMenu($tipo_menu) {
+        $this->validarTipoMenu($tipo_menu);
         $this->tipo_menu = $tipo_menu;
     }
 // --------------------------------------------------------------
@@ -63,6 +67,7 @@ class menu {
         return $this->stock_minimo;
     }
     public function setStockMinimo($stock_minimo) {
+        $this->validarStockMinimo($stock_minimo);
         $this->stock_minimo = $stock_minimo;
     }
 // --------------------------------------------------------------
@@ -70,35 +75,33 @@ class menu {
         return $this->stock_maximo;
     }
     public function setStockMaximo($stock_maximo) {
+        $this->validarStockMaximo($stock_maximo);
         $this->stock_maximo = $stock_maximo;
     }
 // --------------------------------------------------------------
 
+
 // /////////////////////////
 // Funciones de la clase.
 // --------------------------------------------------------------
-public function validarPrecio($precio) {
+private function validarPrecio($precio) {
     // No puede ser 0 ni menor a.
 }
 // --------------------------------------------------------------
-public function validarTipoMenu($tipo_menu) {
-    // Solo puede ser uno de los que ya estan definidos.
+private function validarTipoMenu($tipo_menu) {
+    // Solo puede ser uno de los que ya están definidos; menú semanal, menú quincenal o menú mensual.
 }
 // --------------------------------------------------------------
-public function validarStockMinimo($stock_minimo) {
+private function validarStockMinimo($stock_minimo) {
     // No puede ser 0 ni menor a.
-    // No puede ser mayor al stock maximo.
+    // No puede ser mayor al stock máximo.
 }
 // --------------------------------------------------------------
-public function validarStockMaximo($stock_maximo) {
+private function validarStockMaximo($stock_maximo) {
     // No puede ser 0 ni menor a.
-    // No puede ser menor al stock minimo.
+    // No puede ser menor al stock mínimo.
 }
 // --------------------------------------------------------------
-
-
 }
-
-
 
 ?>

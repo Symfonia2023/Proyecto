@@ -1,8 +1,9 @@
 <?php
 
+include 'usuario.php'; // Se le incluye la clase usuario ya que cada vez que se crea un cliente nuevo se guardan sus datos para la posterior comprobación de login (se implementará en próximas versiones).
 include 'cliente.php';
 
-class clienteEmpresa extends cliente {
+class clienteEmpresa extends cliente { // Clase que hereda atributos
 // /////////////////////////
 // ATRIBUTOS
 // --------------------------------------------------------------
@@ -14,9 +15,9 @@ class clienteEmpresa extends cliente {
 // /////////////////////////
 // CONSTRUCTOR
 // --------------------------------------------------------------
-    public function __construct($telefono,$email,$direccion_completa,$autorizacion,$nombre_juridico,$RUT) {
+    public function __construct($telefono,$email,$direccion_completa,$autorizacion,$nombre_juridico,$RUT) { 
 
-        $this->nro_cliente = self::$nroAutomatico; // Asignar el nro automaticamente.
+        $this->nro_cliente = self::$nroAutomatico; // Asignar el nro automáticamente.
         self::$nroAutomatico++; // Incrementar el contador de nroAutomatico.
     
         $this->telefono=$telefono;
@@ -43,6 +44,7 @@ class clienteEmpresa extends cliente {
         return $this->RUT;
     }
     public function setRUT($RUT) {
+        $this->validarRUT($RUT);
         $this->RUT = $RUT;
     }
 // --------------------------------------------------------------

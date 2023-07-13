@@ -1,22 +1,25 @@
 <?php
 
 
-class cliente { // Al ser una clase PADRE no tiene constructor, sus hijos si.
+class cliente { // Al ser una clase PADRE no tiene constructor, sus hijos sí.
 // /////////////////////////
 // ATRIBUTOS
 // --------------------------------------------------------------
-    private static $nroAutomatico=1; // Variable para asignar nro_cliente automaticamente.
+    private static $nroAutomatico=1; // Variable para asignar nro_cliente automáticamente.
     private $nro_cliente;
-    private $telefono=[];
+    private $telefono=[]; // Es un array ya que el atributo es multivaluado.
     private $email;
     private $direccion_completa=[
         "calle" => '',
         "nro_puerta" => '',
         "esquina" => '',
-        "barrio" => ''
+        "barrio" => '',
+        "bloque" => '',
+        "apartamento" => ''
     ];
     private $autorizacion;
 // --------------------------------------------------------------
+
 
 // /////////////////////////
 // GETTERS Y SETTERS de los atributos.
@@ -29,6 +32,7 @@ class cliente { // Al ser una clase PADRE no tiene constructor, sus hijos si.
         return $this->telefono;
     }
     public function setTelefono($telefono) {
+        $this->validarTelefono($telefono);
         $this->telefono = $telefono;
     }
 // --------------------------------------------------------------
@@ -36,17 +40,20 @@ class cliente { // Al ser una clase PADRE no tiene constructor, sus hijos si.
         return $this->email;
     }
     public function setEmail($email) {
+        $this->validarEmail($email);
         $this->email = $email;
     }
 // --------------------------------------------------------------
     public function getDireccionCompleta() {
         return $this->direccion_completa;
     }
-    public function setDireccionCompleta($calle, $nro_puerta, $esquina, $barrio) {
+    public function setDireccionCompleta($calle, $nro_puerta, $esquina, $barrio, $bloque, $apartamento) {
         $this->direccion_completa['calle'] = $calle;
         $this->direccion_completa['nro_puerta'] = $nro_puerta;
         $this->direccion_completa['esquina'] = $esquina;
         $this->direccion_completa['barrio'] = $barrio;
+        $this->direccion_completa['bloque'] = $bloque;
+        $this->direccion_completa['apartamento'] = $apartamento;
     }
 // --------------------------------------------------------------
     public function getAutorizacion() {
@@ -57,16 +64,16 @@ class cliente { // Al ser una clase PADRE no tiene constructor, sus hijos si.
     }
 // --------------------------------------------------------------
 
+
 // /////////////////////////
 // Funciones de la clase.
 // --------------------------------------------------------------
-public function validarTelefono($telefono) {
-    // El telefono no puede contener letras ni caracteres extraños, solo numeros.
+private function validarTelefono($telefono) {
+    // El teléfono no puede contener letras ni caracteres extraños, solo números.
 } 
 // --------------------------------------------------------------
-public function validarEmail($email) {
-    // No puede ser con otro formato que no sea @ejemplo.com
-    // 
+private function validarEmail($email) {
+    // No puede estar conformado con otro formato que no sea @ejemplo.com.
 } 
 // --------------------------------------------------------------
 }

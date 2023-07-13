@@ -1,25 +1,23 @@
 <?php
 
-// El comando "self::" es para acceder a elementos estaticos de la clase.
+// El comando "self::" es para acceder a elementos estáticos de la clase.
 
 class pedido { 
 // /////////////////////////
 // ATRIBUTOS
 // --------------------------------------------------------------
-    private static $nro_pedidoAutomatico=1; // Variable para asignar el numero de pedido automaticamente.
+    private static $nro_pedidoAutomatico=1; // Variable para asignar el número de pedido automáticamente.
     private $nro_pedido;
-    private $fecha;
-    private $metodo_pago;
+    private $metodo_pago; // Se utilizará la API de MercadoPago.
 // --------------------------------------------------------------
 
 // /////////////////////////
 // CONSTRUCTOR
 // --------------------------------------------------------------
-    public function __construct($fecha,$metodo_pago) { // No se le agrega el atributo de la clase "nro_pedido" como parametro porque se lo asignará automaticamente.
-        $this->nro_pedido = self::$nro_pedidoAutomatico;
+    public function __construct($metodo_pago) { // No se le agrega el atributo de la clase "nro_pedido" como parámetro porque se lo asignará automáticamente.
+        $this->nro_pedido = self::$nro_pedidoAutomatico; 
         self::$nro_pedidoAutomatico++;
 
-        $this->fecha = $fecha;
         $this->metodo_pago = $metodo_pago;
     }
 // --------------------------------------------------------------
@@ -31,13 +29,6 @@ class pedido {
         return $this->nro_pedido;
     }
 // --------------------------------------------------------------
-    public function getFecha() {
-        return $this->fecha;
-    }
-    public function setFecha($fecha){
-        $this->fecha=$fecha;
-    }
-// --------------------------------------------------------------
     public function getMetodoPago() {
         return $this->metodo_pago;
     }
@@ -45,19 +36,6 @@ class pedido {
         $this->metodo_pago=$metodo_pago;
     }
 // --------------------------------------------------------------
-
-// /////////////////////////
-// Funciones de la clase.
-// --------------------------------------------------------------
-    public function validarFecha($fecha) {
-        // No puede ser  0 0 00 
-    }
-// --------------------------------------------------------------
 }
-
-
-
-
-
 
 ?>

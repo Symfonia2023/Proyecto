@@ -4,18 +4,20 @@ class caja {
 // /////////////////////////
 // ATRIBUTOS
 // --------------------------------------------------------------
-    private static $idAutomatico=1; // Variable para asignar ID's automaticamente.
+    private static $idAutomatico=1; // Variable para asignar ID's automáticamente.
     private $id_caja;
 // --------------------------------------------------------------
+
 
 // /////////////////////////
 // CONSTRUCTOR
 // --------------------------------------------------------------
     public function __construct() {
-        $this->id_caja = self::$idAutomatico; // Asignar la ID automaticamente.
+        $this->id_caja = self::$idAutomatico; // Asignar la ID automáticamente.
         self::$idAutomatico++; // Incrementar el contador de ID's.
     }
 // --------------------------------------------------------------
+
 
 // /////////////////////////
 // GETTERS Y SETTERS de los atributos.
@@ -25,3 +27,5 @@ class caja {
     }
 // --------------------------------------------------------------
 }
+
+?>
