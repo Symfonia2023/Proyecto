@@ -76,6 +76,7 @@ private function validarEmail($email) {
     // No puede estar conformado con otro formato que no sea @ejemplo.com.
 } 
 // --------------------------------------------------------------
+
 }
 
 ?>

@@ -46,6 +46,7 @@ class usuario {
     }
 // --------------------------------------------------------------
 
+
 // /////////////////////////
 // Funciones de la clase.
 // --------------------------------------------------------------
@@ -57,6 +58,7 @@ public function validarContrasena($contrasena) {
     // Verificar si la contraseña coincide con el login en la base de datos.
 } 
 // --------------------------------------------------------------
+
 }
 
 ?>

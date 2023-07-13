@@ -66,6 +66,7 @@ class clienteWeb extends cliente { // Clase que hereda atributos.
         }
     } 
 // --------------------------------------------------------------
+
 }
 
 ?>

@@ -102,6 +102,7 @@ private function validarStockMaximo($stock_maximo) {
     // No puede ser menor al stock mínimo.
 }
 // --------------------------------------------------------------
+
 }
 
 ?>

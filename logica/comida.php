@@ -11,6 +11,7 @@ class comida {
     private $tipo_dieta;
 // --------------------------------------------------------------
 
+
 // /////////////////////////
 // CONSTRUCTOR
 // ----------------------------------------------------------------------------------------
@@ -69,6 +70,7 @@ class comida {
         // Solo puede ser uno de los que ya están definidos; dieta vegetariana, dieta ovolácteovegetariana, dieta ovovegetariana, dieta vegana o dieta celíaca.
     }
 // --------------------------------------------------------------
+
 }
 
 ?>

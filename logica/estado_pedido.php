@@ -28,6 +28,7 @@ private function validarNombre($precio) {
     // Solo puede ser uno de los que ya están definidos; solicitado, confirmado, enviado, entregado o rechazado.
 }
 // --------------------------------------------------------------
+
 }
 
 ?>
