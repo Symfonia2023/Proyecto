@@ -24,9 +24,9 @@ class estado_pedido {
 // /////////////////////////
 // Funciones de la clase.
 // --------------------------------------------------------------
-private function validarNombre($precio) {
-    // Solo puede ser uno de los que ya están definidos; solicitado, confirmado, enviado, entregado o rechazado.
-}
+    private function validarNombre($precio) {
+        // Solo puede ser uno de los que ya están definidos; solicitado, confirmado, enviado, entregado o rechazado.
+    }
 // --------------------------------------------------------------
 
 }

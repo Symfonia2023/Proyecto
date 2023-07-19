@@ -24,9 +24,9 @@ class estado_menu {
 // /////////////////////////
 // Funciones de la clase.
 // --------------------------------------------------------------
-private function validarNombre($precio) {
-    // Solo puede ser uno de los que ya están definidos; solicitado, en stock, en producción, envasado, entregado, devuelto o desechado.
-}
+    private function validarNombre($precio) {
+        // Solo puede ser uno de los que ya están definidos; solicitado, en stock, en producción, envasado, entregado, devuelto o desechado.
+    }
 // --------------------------------------------------------------
 
 }

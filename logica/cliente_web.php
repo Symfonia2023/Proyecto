@@ -48,6 +48,8 @@ class clienteWeb extends cliente { // Clase que hereda atributos.
         return $this->nombre_completo;
     }
     public function setNombreCompleto($nombre, $apellido) {
+        $this->validarLongitudNombre($nombre);
+        $this->validarLongitudApellido($apellido);
         $this->nombre_completo['nombre'] = $nombre;
         $this->nombre_completo['apellido'] = $apellido;
     }
@@ -57,9 +59,27 @@ class clienteWeb extends cliente { // Clase que hereda atributos.
 // /////////////////////////
 // Funciones de la clase.
 // --------------------------------------------------------------
-    public function validarCI($CI) {
+    private function validarCI($CI) { // Función para validar la longitud del atributo y no generar errores en la base de datos.
         $cantCaracteres = strlen($CI); // Strlen es una función que devuelve la cantidad de caracteres de un texto.
         if ($cantCaracteres != 8) {
+            return false;
+        } else {
+            return true;
+        }
+    } 
+// --------------------------------------------------------------
+    private function validarLongitudNombre($nombre) { // Función para validar la longitud del atributo y no generar errores en la base de datos.
+        $cantCaracteres = strlen($nombre); // Strlen es una función que devuelve la cantidad de caracteres de un texto.
+        if ($cantCaracteres > 30) {
+            return false;
+        } else {
+            return true;
+        }
+    } 
+// --------------------------------------------------------------
+    private function validarLongitudApellido($apellido) { // Función para validar la longitud del atributo y no generar errores en la base de datos.
+        $cantCaracteres = strlen($apellido); // Strlen es una función que devuelve la cantidad de caracteres de un texto.
+        if ($cantCaracteres > 30) {
             return false;
         } else {
             return true;

@@ -24,9 +24,9 @@ class sucursal {
 // /////////////////////////
 // Funciones de la clase.
 // --------------------------------------------------------------
-private function validarNroSucursal($nroSucursal) {
-    // Verificar si el n° de la sucursal está entre las sucursales ya definidas.
-} 
+    private function validarNroSucursal($nroSucursal) {
+        // Verificar si el n° de la sucursal está entre las sucursales ya definidas.
+    } 
 // --------------------------------------------------------------
 
 }

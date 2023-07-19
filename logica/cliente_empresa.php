@@ -37,6 +37,7 @@ class clienteEmpresa extends cliente { // Clase que hereda atributos
         return $this->nombre_juridico;
     }
     public function setNombreJuridico($nombre_juridico) {
+        $this->validarLongitudNombreJuridico($nombre_juridico);
         $this->nombre_juridico = $nombre_juridico;
     }
 // --------------------------------------------------------------
@@ -53,14 +54,23 @@ class clienteEmpresa extends cliente { // Clase que hereda atributos
 // /////////////////////////
 // Funciones de la clase.
 // --------------------------------------------------------------
-public function validarRUT($RUT) {
-    $cantCaracteres = strlen($RUT);
-        if ($cantCaracteres != 12) {
+    private function validarRUT($RUT) { // Función para validar la longitud del atributo y no generar errores en la base de datos.
+        $cantCaracteres = strlen($RUT); // Strlen es una función que devuelve la cantidad de caracteres de un texto.
+            if ($cantCaracteres != 12) {
+                return false;
+            } else {
+                return true;
+            }
+    } 
+// --------------------------------------------------------------
+    private function validarLongitudNombreJuridico($nombre_juridico) { // Función para validar la longitud del atributo y no generar errores en la base de datos.
+        $cantCaracteres = strlen($nombre_juridico); // Strlen es una función que devuelve la cantidad de caracteres de un texto.
+        if ($cantCaracteres > 30) {
             return false;
         } else {
             return true;
         }
-} 
+    } 
 // --------------------------------------------------------------
 
 }

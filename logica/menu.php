@@ -44,6 +44,7 @@ class menu {
         return $this->nombre_menu;
     }
     public function setNombreMenu($nombre_menu) {
+        $this->validarLongitudNombreMenu($nombre_menu);
         $this->nombre_menu = $nombre_menu;
     }
 // --------------------------------------------------------------
@@ -52,6 +53,7 @@ class menu {
     }
     public function setPrecio($precio) {
         $this->validarPrecio($precio);
+        $this->validarLongitudPrecio($precio);
         $this->precio = $precio;
     }
 // --------------------------------------------------------------
@@ -60,6 +62,7 @@ class menu {
     }
     public function setTipoMenu($tipo_menu) {
         $this->validarTipoMenu($tipo_menu);
+        $this->validarLongitudTipoMenu($tipo_menu);
         $this->tipo_menu = $tipo_menu;
     }
 // --------------------------------------------------------------
@@ -68,6 +71,7 @@ class menu {
     }
     public function setStockMinimo($stock_minimo) {
         $this->validarStockMinimo($stock_minimo);
+        $this->validarLongitudStockMinimo($stock_minimo);
         $this->stock_minimo = $stock_minimo;
     }
 // --------------------------------------------------------------
@@ -76,6 +80,7 @@ class menu {
     }
     public function setStockMaximo($stock_maximo) {
         $this->validarStockMaximo($stock_maximo);
+        $this->validarLongitudStockMaximo($stock_maximo);
         $this->stock_maximo = $stock_maximo;
     }
 // --------------------------------------------------------------
@@ -84,23 +89,68 @@ class menu {
 // /////////////////////////
 // Funciones de la clase.
 // --------------------------------------------------------------
-private function validarPrecio($precio) {
-    // No puede ser 0 ni menor a.
-}
+    private function validarPrecio($precio) {
+        // No puede ser 0 ni menor a.
+    }
 // --------------------------------------------------------------
-private function validarTipoMenu($tipo_menu) {
-    // Solo puede ser uno de los que ya están definidos; menú semanal, menú quincenal o menú mensual.
-}
+    private function validarTipoMenu($tipo_menu) {
+        // Solo puede ser uno de los que ya están definidos; menú semanal, menú quincenal o menú mensual.
+    }
 // --------------------------------------------------------------
-private function validarStockMinimo($stock_minimo) {
-    // No puede ser 0 ni menor a.
-    // No puede ser mayor al stock máximo.
-}
+    private function validarStockMinimo($stock_minimo) {
+        // No puede ser 0 ni menor a.
+        // No puede ser mayor al stock máximo.
+    }
 // --------------------------------------------------------------
-private function validarStockMaximo($stock_maximo) {
-    // No puede ser 0 ni menor a.
-    // No puede ser menor al stock mínimo.
-}
+    private function validarStockMaximo($stock_maximo) {
+        // No puede ser 0 ni menor a.
+        // No puede ser menor al stock mínimo.
+    }
+// --------------------------------------------------------------
+    private function validarLongitudNombreMenu($nombre_menu) { // Función para validar la longitud del atributo y no generar errores en la base de datos.
+        $cantCaracteres = strlen($nombre_menu); // Strlen es una función que devuelve la cantidad de caracteres de un texto.
+        if ($cantCaracteres > 30) {
+            return false;
+        } else {
+            return true;
+        }
+    } 
+// --------------------------------------------------------------
+    private function validarLongitudTipoMenu($tipo_menu) { // Función para validar la longitud del atributo y no generar errores en la base de datos.
+        $cantCaracteres = strlen($tipo_menu); // Strlen es una función que devuelve la cantidad de caracteres de un texto.
+        if ($cantCaracteres > 30) {
+            return false;
+        } else {
+            return true;
+        }
+    } 
+// --------------------------------------------------------------
+    private function validarLongitudPrecio($precio) { // Función para validar la longitud del atributo y no generar errores en la base de datos.
+        $cantCaracteres = strlen($precio); // Strlen es una función que devuelve la cantidad de caracteres de un texto.
+        if ($cantCaracteres > 6) {
+            return false;
+        } else {
+            return true;
+        }
+    } 
+// --------------------------------------------------------------
+    private function validarLongitudStockMinimo($stock_minimo) { // Función para validar la longitud del atributo y no generar errores en la base de datos.
+        $cantCaracteres = strlen($stock_minimo); // Strlen es una función que devuelve la cantidad de caracteres de un texto.
+        if ($cantCaracteres > 4) {
+            return false;
+        } else {
+            return true;
+        }
+    } 
+// --------------------------------------------------------------
+    private function validarLongitudStockMaximo($stock_maximo) { // Función para validar la longitud del atributo y no generar errores en la base de datos.
+        $cantCaracteres = strlen($stock_maximo); // Strlen es una función que devuelve la cantidad de caracteres de un texto.
+        if ($cantCaracteres > 4) {
+            return false;
+        } else {
+            return true;
+        }
+    } 
 // --------------------------------------------------------------
 
 }

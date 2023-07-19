@@ -38,6 +38,7 @@ class comida {
         return $this->nombre_comida;
     }
     public function setNombreComida($nombre_comida) {
+        $this->validarLongitudNombreComida($nombre_comida);
         $this->nombre_comida = $nombre_comida;
     }
 // --------------------------------------------------------------
@@ -46,6 +47,7 @@ class comida {
     }
     public function setTiempoElaboracion($tiempo_elaboracion) {
         $this->validarTiempoElaboracion($tiempo_elaboracion);
+        $this->validarLongitudTiempoElaboracion($tiempo_elaboracion);
         $this->tiempo_elaboracion = $tiempo_elaboracion;
     }
 // --------------------------------------------------------------
@@ -54,6 +56,7 @@ class comida {
     }
     public function setTipoDieta($tipo_dieta) {
         $this->validarTipoDieta($tipo_dieta);
+        $this->validarLongitudTipoDieta($tipo_dieta);
         $this->tipo_dieta=$tipo_dieta;
     }
 // --------------------------------------------------------------
@@ -69,6 +72,33 @@ class comida {
     private function validarTipoDieta($tipo_dieta) {
         // Solo puede ser uno de los que ya están definidos; dieta vegetariana, dieta ovolácteovegetariana, dieta ovovegetariana, dieta vegana o dieta celíaca.
     }
+// --------------------------------------------------------------
+    private function validarLongitudNombreComida($nombre_comida) { // Función para validar la longitud del atributo y no generar errores en la base de datos.
+        $cantCaracteres = strlen($nombre_comida); // Strlen es una función que devuelve la cantidad de caracteres de un texto.
+        if ($cantCaracteres > 100) {
+            return false;
+        } else {
+            return true;
+        }
+    } 
+// --------------------------------------------------------------
+    private function validarLongitudTiempoElaboracion($tiempo_elaboracion) { // Función para validar la longitud del atributo y no generar errores en la base de datos.
+        $cantCaracteres = strlen($tiempo_elaboracion); // Strlen es una función que devuelve la cantidad de caracteres de un texto.
+        if ($cantCaracteres > 10) {
+            return false;
+        } else {
+            return true;
+        }
+    } 
+// --------------------------------------------------------------
+    private function validarLongitudTipoDieta($tipo_dieta) { // Función para validar la longitud del atributo y no generar errores en la base de datos.
+        $cantCaracteres = strlen($tipo_dieta); // Strlen es una función que devuelve la cantidad de caracteres de un texto.
+        if ($cantCaracteres > 30) {
+            return false;
+        } else {
+            return true;
+        }
+    } 
 // --------------------------------------------------------------
 
 }
