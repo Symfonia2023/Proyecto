@@ -1,0 +1,175 @@
+@font-face {
+    font-family: fuente1;
+    src: url(/fonts/thryn___.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: fuente1;
+    font-weight: 200;
+}
+
+body {
+    background: url(/resources/background_index.jpg) no-repeat;
+}
+
+nav {
+    background: #E4E4E4;
+    border-bottom: 4px solid #6FB85E;
+    padding: 1rem;
+}
+  
+ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+}
+  
+nav li {
+    display: inline-block;
+}
+  
+nav li a {
+    display: block;
+    color: black;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    text-align: center;
+}
+
+.nav-logo {
+    display: flex;
+    font-size: 2.5rem; 
+    align-items: center;
+}
+  
+li a:hover {
+    text-decoration: 3px underline #6FB85E;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: fit-content;
+    overflow: auto;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dropdown-content-item{
+    width: 100%;
+    border-bottom: 2px solid #6FB85E;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    background: #E4E4E4;
+    border: 2px solid #6FB85E;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+.carrito-container {
+    background: #ffff;
+    margin: 0 auto;
+    max-width: 45rem;
+    padding: 2rem 2rem 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.item {
+    background: #E4E4E4;
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    vertical-align: middle;
+}
+
+.item img {
+    width: 20%;
+    height: 10rem;
+    object-fit: cover;
+}
+
+.item p {
+    margin: 1rem 0 1rem 5rem;
+    display: flex;
+    align-items: center; /* Centra verticalmente el texto */
+    justify-content: center; /* Centra horizontalmente el texto */
+}
+
+.carrito-input {
+    display: flex;
+}
+
+.btn-section {
+    border: none;
+    background: #6FB85E;
+    padding: 0.5rem;
+    color: #ffff;
+    margin: 2rem 1rem;
+    justify-content: flex-end ;
+}
+
+.btn-section:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+footer {
+    background: #E4E4E4;
+    color: black;
+    position: relative;
+    padding: 2rem 0;
+    bottom: 0;
+    width: 100%;
+    border-top: 4px solid #6FB85E;
+}
+
+.footer-content {
+    display:flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.footer-item {
+    flex: 1;
+    padding: 1.2rem;
+    text-align: left;
+    margin-left: 5%;
+}
+
+.footer-titulo {
+    padding-bottom: 1rem;
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: column; 
+  }
+
+.icon {
+    margin-bottom: 1rem;
+}
+
+.bi:hover {
+    color: #6FB85E;
+}
