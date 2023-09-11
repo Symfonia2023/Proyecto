@@ -19,10 +19,7 @@ function main() {
     let validarBoolean = validarCampos(nombre, apellido, email, contraseña, cedula, calle, esquina, telefono, nro_puerta, apartamento, bloque)
     if (!validarBoolean) {
         throw new Error(alert("Debe llenar todos los formularios"));
-    } else {
-        alert("ta bien")
     }
-    alert("WTF")
     let nuevoCliente = new Cliente(nombre, apellido, email, contraseña, telefono, cedula, calle, nro_puerta, esquina, apartamento, bloque)
 
     let validarDatos = validarDatosAJAX(nuevoCliente)
