@@ -18,17 +18,21 @@ class clienteWeb extends cliente { // Clase que hereda atributos.
 // /////////////////////////
 // CONSTRUCTOR
 // --------------------------------------------------------------
-    public function __construct($telefono,$email,$direccion_completa,$autorizacion,$CI,$nombre_completo) {
+    public function __construct($telefono,$email,$direccion_completa,$CI,$nombre_completo) {
 
-        $this->nro_cliente = self::$nroAutomatico; // Asignar el nro automáticamente.
-        self::$nroAutomatico++; // Incrementar el contador de nroAutomatico.
+        try {
+            $clienteWeb = new cliente($telefono, $email, $direccion_completa);
 
-        $this->telefono=$telefono;
-        $this->email=$email;
-        $this->direccion_completa=$direccion_completa;
-        $this->autorizacion=$autorizacion;
-        $this->CI=$CI;
-        $this->nombre_completo=$nombre_completo;
+            $this->nro_cliente = $clienteWeb->getNroCliente();
+            $this->setTelefono($telefono);
+            $this->setEmail($email);
+            $this->setDireccionCompleta($direccion_completa['calle'], $direccion_completa['nro_puerta'], $direccion_completa['esquina'], $direccion_completa['barrio'], $direccion_completa['bloque'], $direccion_completa['apartamento']);
+            $this->setAutorizacion();
+            $this->setCI($CI);
+            $this->setNombreCompleto($nombre_completo['nombre'], $nombre_completo['apellido']);
+        } catch (Exception $e) {
+            throw $e;
+        }
     }
 // --------------------------------------------------------------
 
@@ -40,7 +44,9 @@ class clienteWeb extends cliente { // Clase que hereda atributos.
         return $this->CI;
     }
     public function setCI($CI) {
-        $this->validarCI($CI);
+        if (!$this->validarCI($CI)) {
+            throw new Exception("CI invalido.");
+        }
         $this->CI = $CI;
     }
 // --------------------------------------------------------------
@@ -48,8 +54,13 @@ class clienteWeb extends cliente { // Clase que hereda atributos.
         return $this->nombre_completo;
     }
     public function setNombreCompleto($nombre, $apellido) {
-        $this->validarLongitudNombre($nombre);
-        $this->validarLongitudApellido($apellido);
+        if (!$this->validarLongitudNombre($nombre)) {
+            throw new Exception("Nombre invalido");
+        }
+        if (!$this->validarLongitudApellido($apellido)) {
+            throw new Exception("Apellido invalido");
+        }
+
         $this->nombre_completo['nombre'] = $nombre;
         $this->nombre_completo['apellido'] = $apellido;
     }
@@ -70,7 +81,7 @@ class clienteWeb extends cliente { // Clase que hereda atributos.
 // --------------------------------------------------------------
     private function validarLongitudNombre($nombre) { // Función para validar la longitud del atributo y no generar errores en la base de datos.
         $cantCaracteres = strlen($nombre); // Strlen es una función que devuelve la cantidad de caracteres de un texto.
-        if ($cantCaracteres > 30) {
+        if ($cantCaracteres > 20) {
             return false;
         } else {
             return true;
@@ -79,7 +90,7 @@ class clienteWeb extends cliente { // Clase que hereda atributos.
 // --------------------------------------------------------------
     private function validarLongitudApellido($apellido) { // Función para validar la longitud del atributo y no generar errores en la base de datos.
         $cantCaracteres = strlen($apellido); // Strlen es una función que devuelve la cantidad de caracteres de un texto.
-        if ($cantCaracteres > 30) {
+        if ($cantCaracteres > 20) {
             return false;
         } else {
             return true;

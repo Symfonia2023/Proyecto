@@ -1,8 +1,8 @@
 <?php
-$servername = "";   // Nombre del servidor, "localhost" si se hace en localhost
+$servername = "localhost";   // Nombre del servidor, "localhost" si se hace en localhost
 $username = "root"; // el usuario predeterminado que se crea en localhost en XAMPP es este, de usuario root y password vacia
 $password = "";
-$database = ""; // el nombre que le hayan puesto a la base de datos
+$database = "symfonia_bd"; // el nombre que le hayan puesto a la base de datos
 
 // Crear conexión
 $conn = mysqli_connect($servername, $username, $password, $database);  // Establecer la conexion con la base de datos.
