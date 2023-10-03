@@ -1,6 +1,6 @@
 @font-face {
     font-family: fuente1;
-    src: url(/fonts/thryn___.ttf);
+    src: url(/Symfonia/presentacion/fonts/thryn___.ttf);
 }
 
 * {
@@ -11,7 +11,7 @@
 }
 
 body {
-    background: url(/resources/background_index.jpg) no-repeat;
+    background: url(/Symfonia/presentacion/resources/background_index.jpg) no-repeat;
 }
 
 nav {
@@ -81,44 +81,6 @@ li a:hover {
     text-decoration: none;
 }
 
-.carrito-container {
-    background: #ffff;
-    margin: 0 auto;
-    max-width: 45rem;
-    padding: 2rem 2rem 0 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-}
-
-.item {
-    background: #E4E4E4;
-    width: 100%;
-    padding: 2rem;
-    text-align: center;
-    display: flex;
-    vertical-align: middle;
-}
-
-.item img {
-    width: 20%;
-    height: 10rem;
-    object-fit: cover;
-}
-
-.item p {
-    margin: 1rem 0 1rem 5rem;
-    display: flex;
-    align-items: center; /* Centra verticalmente el texto */
-    justify-content: center; /* Centra horizontalmente el texto */
-}
-
-.carrito-input {
-    display: flex;
-}
-
 .btn-section {
     border: none;
     background: #6FB85E;
@@ -137,7 +99,7 @@ li a:hover {
 footer {
     background: #E4E4E4;
     color: black;
-    position: relative;
+    position: absolute;
     padding: 2rem 0;
     bottom: 0;
     width: 100%;
@@ -163,8 +125,13 @@ footer {
 
 .icon-container {
     display: flex;
-    flex-direction: column; 
+    flex-direction: row;
+    text-align: center;
   }
+
+.icon-container p {
+    margin-left: 1rem;
+}
 
 .icon {
     margin-bottom: 1rem;

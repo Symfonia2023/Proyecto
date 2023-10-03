@@ -1,0 +1,56 @@
+@font-face {
+    font-family: fuente1;
+    src: url(/Symfonia/presentacion/fonts/thryn___.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: fuente1;
+    font-weight: 200;
+}
+
+nav {
+    background: #E4E4E4;
+    border-bottom: 4px solid #6FB85E;
+    padding: 1rem;
+}
+  
+ul {
+    list-style-type: none;
+    align-items: center;
+    justify-content:space-around;
+    display: inline-flex;
+}
+
+nav li {
+    width: fit-content;
+}
+
+.nav-logo {
+    display: flex;
+    font-size: 2.5rem; 
+    align-items: center;
+}
+
+.input-btn {
+    border: none;
+    background: #6FB85E;
+    padding: 0.6rem;
+    color: #ffff;
+    margin: 2rem;
+    transform: scale(1.4);
+}
+
+.input-btn:hover {
+    cursor: pointer;
+}
+
+.section-pedidos, .section-control-menus {
+    background: #E4E4E4;
+    width: fit-content;
+    margin: 3rem 3rem;
+    padding: 1rem 2rem;
+    display: inline-flex;
+}
+

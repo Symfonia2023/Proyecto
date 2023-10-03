@@ -1,6 +1,6 @@
 @font-face {
     font-family: fuente1;
-    src: url(/fonts/thryn___.ttf);
+    src: url(/Symfonia/presentacion/fonts/thryn___.ttf);
 }
 
 * {
@@ -11,7 +11,7 @@
 }
 
 body {
-    background: url(/resources/background_index.jpg) no-repeat;
+    background: url(/Symfonia/presentacion/resources/background_index.jpg) no-repeat;
 }
 
 nav {
@@ -159,8 +159,13 @@ footer {
 
 .icon-container {
     display: flex;
-    flex-direction: column; 
+    flex-direction: row;
+    text-align: center;
   }
+
+.icon-container p {
+    margin-left: 1rem;
+}
 
 .icon {
     margin-bottom: 1rem;

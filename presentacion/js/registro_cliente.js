@@ -18,7 +18,7 @@ function main() {
 
     let validarBoolean = validarCampos(nombre, apellido, email, contraseña, cedula, calle, esquina, telefono, nro_puerta, apartamento, bloque)
     if (!validarBoolean) {
-        throw new error(alert("Debe llenar todos los formularios"));
+        throw new Error(alert("Debe llenar todos los formularios"));
     }
     let nuevoCliente = new Cliente(nombre, apellido, email, contraseña, telefono, cedula, calle, nro_puerta, esquina, apartamento, bloque)
 
@@ -33,19 +33,20 @@ function validarCampos(nombre, apellido, email, contraseña, cedula, calle, esqu
         apellido.trim() === "" ||
         email.trim() === "" ||
         contraseña.trim() === "" ||
-        cedula === '' ||
+        isNaN(cedula) ||
         calle.trim() === "" ||
         esquina.trim() === "" ||
-        telefono === '' ||
-        nro_puerta === '' ||
-        apartamento === '' ||
-        bloque === ''
+        isNaN(telefono) ||
+        isNaN(nro_puerta) ||
+        isNaN(apartamento) ||
+        isNaN(bloque) 
     ) {
         return false; // Al menos uno de los campos está vacío
-    } else {
-        return true; // Todos los campos tienen valores no vacíos
     }
+    return true; // Todos los campos tienen valores no vacíos
 }
+
+
 
 
 function validarDatosAJAX(nuevoCliente) {
@@ -56,14 +57,13 @@ function validarDatosAJAX(nuevoCliente) {
         contentType: 'application/json', // Indica que el contenido es JSON
 
         success: function(response) {
-            for (let i=0; i < response.length; i++) {
-                console.log(response[i]);
-            }
+            console.log(response);
         }, 
         error: function(error) {
-            // Maneja los errores aca
+            // Maneja los errores aquí
             console.log(error);
             
         }
     });
 }
+
