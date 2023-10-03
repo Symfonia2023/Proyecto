@@ -15,11 +15,7 @@ class clienteEmpresa extends cliente { // Clase que hereda atributos
 // /////////////////////////
 // CONSTRUCTOR
 // --------------------------------------------------------------
-    public function __construct($telefono,$email,$direccion_completa,$autorizacion,$nombre_juridico,$RUT) { 
-
-        $this->nro_cliente = self::$nroAutomatico; // Asignar el nro automáticamente.
-        self::$nroAutomatico++; // Incrementar el contador de nroAutomatico.
-    
+    public function __construct($telefono,$email,$direccion_completa,$autorizacion,$nombre_juridico,$RUT) {
         $this->telefono=$telefono;
         $this->email=$email;
         $this->direccion_completa=$direccion_completa;
@@ -37,7 +33,6 @@ class clienteEmpresa extends cliente { // Clase que hereda atributos
         return $this->nombre_juridico;
     }
     public function setNombreJuridico($nombre_juridico) {
-        $this->validarLongitudNombreJuridico($nombre_juridico);
         $this->nombre_juridico = $nombre_juridico;
     }
 // --------------------------------------------------------------
@@ -45,7 +40,6 @@ class clienteEmpresa extends cliente { // Clase que hereda atributos
         return $this->RUT;
     }
     public function setRUT($RUT) {
-        $this->validarRUT($RUT);
         $this->RUT = $RUT;
     }
 // --------------------------------------------------------------
@@ -53,24 +47,6 @@ class clienteEmpresa extends cliente { // Clase que hereda atributos
 
 // /////////////////////////
 // Funciones de la clase.
-// --------------------------------------------------------------
-    private function validarRUT($RUT) { // Función para validar la longitud del atributo y no generar errores en la base de datos.
-        $cantCaracteres = strlen($RUT); // Strlen es una función que devuelve la cantidad de caracteres de un texto.
-            if ($cantCaracteres != 12) {
-                return false;
-            } else {
-                return true;
-            }
-    } 
-// --------------------------------------------------------------
-    private function validarLongitudNombreJuridico($nombre_juridico) { // Función para validar la longitud del atributo y no generar errores en la base de datos.
-        $cantCaracteres = strlen($nombre_juridico); // Strlen es una función que devuelve la cantidad de caracteres de un texto.
-        if ($cantCaracteres > 30) {
-            return false;
-        } else {
-            return true;
-        }
-    } 
 // --------------------------------------------------------------
 
 }
