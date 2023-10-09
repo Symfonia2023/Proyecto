@@ -12,41 +12,43 @@ function main() {
     let calle = $("#calle").val();
     let nro_puerta = Number($("#num_puerta").val());
     let esquina = $("#esquina").val();
-    // let barrio = 'Barrio Sur';
+    let barrio = $("#barrio").val();
     let bloque = Number($("#bloque_apto").val());
     let apartamento = Number($("#apartamento").val());
 
-    let validarBoolean = validarCampos(nombre, apellido, email, contraseña, cedula, calle, esquina, telefono, nro_puerta, apartamento, bloque)
+    let validarBoolean = validarCampos(nombre, apellido, email, contraseña, telefono, cedula, calle, nro_puerta, esquina, barrio, bloque, apartamento)
     if (!validarBoolean) {
-        throw new Error(alert("Debe llenar todos los formularios"));
+        alert("Debe llenar todos los formulariosasd");
     }
-    let nuevoCliente = new Cliente(nombre, apellido, email, contraseña, telefono, cedula, calle, nro_puerta, esquina, apartamento, bloque)
 
+    let nuevoCliente = new Cliente(nombre, apellido, email, contraseña, telefono, cedula, calle, nro_puerta, esquina, apartamento, bloque)
     let validarDatos = validarDatosAJAX(nuevoCliente)
 
 }
 
-
-function validarCampos(nombre, apellido, email, contraseña, cedula, calle, esquina, telefono, nro_puerta, apartamento, bloque) {
+function validarCampos(nombre, apellido, email, contraseña, telefono, cedula, calle, nro_puerta, esquina, barrio, bloque, apartamento) {
+    // Verificar si algún campo está vacío
     if (
-        nombre.trim() === "" ||
-        apellido.trim() === "" ||
-        email.trim() === "" ||
-        contraseña.trim() === "" ||
-        isNaN(cedula) ||
-        calle.trim() === "" ||
-        esquina.trim() === "" ||
-        isNaN(telefono) ||
-        isNaN(nro_puerta) ||
-        isNaN(apartamento) ||
-        isNaN(bloque) 
+        nombre === "" ||
+        apellido === "" ||
+        email === "" ||
+        contraseña === "" ||
+        isNaN(telefono) || telefono === 0 ||
+        isNaN(cedula) || cedula === 0 ||
+        calle === "" ||
+        isNaN(nro_puerta) || nro_puerta === 0 ||
+        esquina === "" ||
+        barrio === "" ||
+        isNaN(bloque) || bloque === 0 ||
+        isNaN(apartamento) || apartamento === 0
     ) {
-        return false; // Al menos uno de los campos está vacío
+        // Devolver false si algún campo está vacío
+        return false;
+    } else {
+        // Devolver true si todos los campos están llenos
+        return true;
     }
-    return true; // Todos los campos tienen valores no vacíos
 }
-
-
 
 
 function validarDatosAJAX(nuevoCliente) {
