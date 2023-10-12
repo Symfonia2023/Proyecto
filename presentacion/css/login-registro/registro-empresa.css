@@ -1,6 +1,6 @@
 @font-face {
     font-family: fuente1;
-    src: url(/Symfonia/presentacion/fonts/thryn___.ttf);
+    src: url(/presentacion/fonts/thryn___.ttf);
 }
 
 * {
@@ -11,7 +11,7 @@
 }
 
 body {
-    background: url(/Symfonia/presentacion/resources/background_index.jpg) no-repeat;
+    background: url(/presentacion/resources/background_index.jpg) no-repeat;
 }
 
 nav {
