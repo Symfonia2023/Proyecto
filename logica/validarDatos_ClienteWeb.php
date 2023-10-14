@@ -10,7 +10,7 @@ $direccion_completa = [
     "calle" => $nuevoCliente->calle,
     "nro_puerta" => $nuevoCliente->nro_puerta,
     "esquina" => $nuevoCliente->esquina,
-    "barrio" => 'Barrio Sur',
+    "barrio" => $nuevoCliente->barrio,
     "bloque" => $nuevoCliente->bloque,
     "apartamento" => $nuevoCliente->apartamento
 ];
@@ -20,19 +20,42 @@ $nombre_completo = [
     "apellido" => $nuevoCliente->apellido
 ];
 
+unset($formulariosVacios);
 $formulariosVacios = [];
 
-// ifs para validar la longitud de los datos.
-if (validarLongitudNombre($nuevoCliente->nombre))
-    array_push($formulariosFacios, 'nombre');
-if (validarLongitudApellido($nuevoCliente->apellido))
-    array_push($formulariosFacios, 'apellido');
-if (validarLongitudBarrio($nuevoCliente->email))
-    array_push($formulariosFacios, 'email');
+////////////////////////////////////
+// IFS PARA VALIDAR LOS DATOS
 
+if (validarNombre($nuevoCliente->nombre))
+    array_push($formulariosVacios, 'nombre');
+if (validarApellido($nuevoCliente->apellido))
+    array_push($formulariosVacios, 'apellido');
+if (validarEmail($nuevoCliente->email))
+    array_push($formulariosVacios, 'email');
+if (validarContrasenia($nuevoCliente->contraseña))
+    array_push($formulariosVacios, 'contraseña');
+if (validarTelefono($nuevoCliente->telefono))
+    array_push($formulariosVacios, 'telefono');
+if (validarCedula($nuevoCliente->cedula))
+    array_push($formulariosVacios, 'cedula');
+if (validarCalle($nuevoCliente->calle))
+    array_push($formulariosVacios, 'calle');
+if (validarNroPuerta($nuevoCliente->nro_puerta))
+    array_push($formulariosVacios, 'nroPuerta');
+if (validarEsquina($nuevoCliente->esquina))
+    array_push($formulariosVacios, 'esquina');
+if (validarBarrio($nuevoCliente->barrio))
+    array_push($formulariosVacios, 'barrio');
+if (validarApartamento($nuevoCliente->apartamento))
+    array_push($formulariosVacios, 'apartamento');
+if (validarBloque($nuevoCliente->bloque))
+    array_push($formulariosVacios, 'bloque');
 
 header('Content-Type: application/json');
-echo json_encode($formulariosFacios);
+echo json_encode($formulariosVacios);
+
+//////////
+//////////////////////////////////
 
 
 // $clienteBase = new cliente($nuevoCliente->telefono, $nuevoCliente->email, $direccion_completa);

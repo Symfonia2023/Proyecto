@@ -17,30 +17,33 @@ function main() {
     let apartamento = Number($("#apartamento").val());
 
     let validarBoolean = validarCampos(nombre, apellido, email, contraseña, telefono, cedula, calle, nro_puerta, esquina, barrio, bloque, apartamento)
-    if (!validarBoolean) {
-        alert("Debe llenar todos los formulariosasd");
-    }
+    // if (!validarBoolean) {
+    //     alert("Por favor, complete todos los formularios.");
+    // }
 
-    let nuevoCliente = new Cliente(nombre, apellido, email, contraseña, telefono, cedula, calle, nro_puerta, esquina, apartamento, bloque)
+    let nuevoCliente = new Cliente(nombre, apellido, email, contraseña, telefono, cedula, calle, nro_puerta, esquina, barrio, bloque, apartamento)
     let validarDatos = validarDatosAJAX(nuevoCliente)
 
 }
 
+
+
 function validarCampos(nombre, apellido, email, contraseña, telefono, cedula, calle, nro_puerta, esquina, barrio, bloque, apartamento) {
     // Verificar si algún campo está vacío
+    
     if (
         nombre === "" ||
         apellido === "" ||
         email === "" ||
         contraseña === "" ||
-        isNaN(telefono) || telefono === 0 ||
-        isNaN(cedula) || cedula === 0 ||
+        telefono == 0 ||
+        cedula == 0 ||
         calle === "" ||
-        isNaN(nro_puerta) || nro_puerta === 0 ||
+        nro_puerta == 0 ||
         esquina === "" ||
         barrio === "" ||
-        isNaN(bloque) || bloque === 0 ||
-        isNaN(apartamento) || apartamento === 0
+        bloque == 0 ||
+        apartamento == 0
     ) {
         // Devolver false si algún campo está vacío
         return false;
@@ -59,13 +62,36 @@ function validarDatosAJAX(nuevoCliente) {
         contentType: 'application/json', // Indica que el contenido es JSON
 
         success: function(response) {
-            console.log(response);
+            // console.log(response);  
+            if (response.length != 0) {
+                mostrarErrores(response);
+            }
         }, 
         error: function(error) {
-            // Maneja los errores aquí
             console.log(error);
-            
         }
     });
 }
 
+
+function mostrarErrores(errores) {
+    restablecerColores()
+    for (let i = 0; i < errores.length; i++) {
+        // console.log(errores[i]);
+        let campo = `label[for="${errores[i]}"]`;
+        $(`${campo} svg`).attr('fill', '#FF0000');
+        $(campo).addClass('label-con-error');
+        $(`${campo} input, ${campo} svg`).addClass('shake-animation');
+        setTimeout(restablecerAnimacionError, 500); // Se restablece para que se pueda volver a mostrar al presionar el boton y que todavia este el error.
+    }
+    
+    function restablecerAnimacionError() {
+        $('label input, label svg').removeClass('shake-animation');
+    }
+}
+
+function restablecerColores() {
+    $('label svg').attr('fill', '#6FB85E');
+    $('label').removeClass('label-con-error');
+    $(`label`).removeClass('shake-animation');
+}
