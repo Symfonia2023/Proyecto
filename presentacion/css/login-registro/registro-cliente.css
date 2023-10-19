@@ -1,6 +1,10 @@
 @font-face {
     font-family: fuente1;
+<<<<<<< HEAD
     src: url(/Symfonia/presentacion/fonts/thryn___.ttf);
+=======
+    src: url(../../fonts/thryn___.ttf);
+>>>>>>> dfeb5c33de73512811c7d415714b8a3976939421
 }
 
 * {
@@ -11,7 +15,11 @@
 }
 
 body {
+<<<<<<< HEAD
     background: url(/Symfonia/presentacion/resources/background_index.jpg) no-repeat;
+=======
+    background: url(../../resources/background_index.jpg) no-repeat;
+>>>>>>> dfeb5c33de73512811c7d415714b8a3976939421
 }
 
 nav {
