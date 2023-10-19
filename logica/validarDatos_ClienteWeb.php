@@ -5,6 +5,8 @@ include 'utilidades.php';
 
 $data = file_get_contents("php://input");
 $nuevoCliente = json_decode($data);
+header('Content-Type: application/json');
+
 
 $direccion_completa = [
     "calle" => $nuevoCliente->calle,
@@ -51,21 +53,11 @@ if (validarApartamento($nuevoCliente->apartamento))
 if (validarBloque($nuevoCliente->bloque))
     array_push($formulariosVacios, 'bloque');
 
-header('Content-Type: application/json');
-echo json_encode($formulariosVacios);
-
-//////////
-//////////////////////////////////
-
-
-// $clienteBase = new cliente($nuevoCliente->telefono, $nuevoCliente->email, $direccion_completa);
-// $clienteWeb = new clienteWeb($clienteBase->getTelefono(), $clienteBase->getEmail(), $clienteBase->getDireccionCompleta(), $nuevoCliente->cedula, $nombre_completo);
-
-// $respuesta = $clienteBase;
-// $respuestaDos = $clienteWeb;
-
-// header('Content-Type: application/json');
-// echo json_encode($respuesta);
-// echo json_encode($respuestaDos);
+if (empty($formulariosVacios)) {
+    $clienteBase = new cliente($nuevoCliente->telefono, $nuevoCliente->email, $direccion_completa, $nuevoCliente->contraseña);
+    $clienteWeb = new clienteWeb($clienteBase->getTelefono(), $clienteBase->getEmail(), $clienteBase->getDireccionCompleta(), $nuevoCliente->cedula, $nombre_completo, $nuevoCliente->contraseña);
+} else {
+    echo json_encode($formulariosVacios);
+}
 
 ?>

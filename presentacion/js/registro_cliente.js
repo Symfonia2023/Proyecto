@@ -62,9 +62,15 @@ function validarDatosAJAX(nuevoCliente) {
         contentType: 'application/json', // Indica que el contenido es JSON
 
         success: function(response) {
-            // console.log(response);  
+            
             if (response.length != 0) {
+                console.log(response);
                 mostrarErrores(response);
+            }
+            
+            if (response == 0) {
+                console.log("Redireccionando");
+                window.location.href = "../login-registro/login.html";
             }
         }, 
         error: function(error) {
