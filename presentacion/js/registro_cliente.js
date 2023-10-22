@@ -1,5 +1,16 @@
 import Cliente from './cliente.js';
 
+
+$(document).ready(function () {
+    const menuToggle = $('#menu-toggle');
+    const navUl = $('nav ul');
+
+    menuToggle.click(function () {
+        navUl.toggleClass('menu-opened');
+    });
+});
+
+
 $("#btn-registro").click(main);
 
 function main() {
@@ -15,11 +26,6 @@ function main() {
     let barrio = $("#barrio").val();
     let bloque = Number($("#bloque_apto").val());
     let apartamento = Number($("#apartamento").val());
-
-    let validarBoolean = validarCampos(nombre, apellido, email, contraseña, telefono, cedula, calle, nro_puerta, esquina, barrio, bloque, apartamento)
-    // if (!validarBoolean) {
-    //     alert("Por favor, complete todos los formularios.");
-    // }
 
     let nuevoCliente = new Cliente(nombre, apellido, email, contraseña, telefono, cedula, calle, nro_puerta, esquina, barrio, bloque, apartamento)
     let validarDatos = validarDatosAJAX(nuevoCliente)
