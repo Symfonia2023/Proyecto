@@ -208,7 +208,59 @@ input {
     vertical-align: middle;
 }
 
+@media screen and (max-width: 768px) {
+    nav {
+        text-align: center;
+    }
 
+    ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .nav-logo {
+        margin-bottom: 20px;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dropdown {
+        position: relative;
+        text-align: center; /* Centra el texto del enlace */
+    }
+
+    .dropdown-content {
+        position: absolute;
+        width: max-content; /* Establece el ancho máximo según el contenido */
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%); /* Centra horizontalmente el menú desplegable */
+        display: none;
+        background: #E4E4E4;
+        border: 2px solid #6FB85E;
+        text-align: center;
+        z-index: 1000;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block; 
+    }
+
+    .dropdown-content-item {
+        width: 100%;
+        border-bottom: 2px solid #6FB85E;
+    }
+}
 
 
   

@@ -200,7 +200,6 @@ label input {
     text-decoration: none;
 }
 
-
 #btn-registro {
     background-color: #6FB85E;
     color: white;
@@ -209,7 +208,6 @@ label input {
     cursor: pointer;
     font-size: 1.2em;
 }
-
 
 .bi {
     display: inline-block;

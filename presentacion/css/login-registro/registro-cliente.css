@@ -11,15 +11,9 @@
 }
 
 body {
-    background-image: url(../../resources/background_index.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: url(../../resources/background_index.jpg);
     background-attachment: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
+
     align-items: center;
     justify-content: center;
 }
@@ -72,7 +66,7 @@ li a:hover {
     }
 }
 
-@media screen and (max-width: 690px) {
+@media screen and (max-width: 768px) {
     nav {
         text-align: center;
     }
@@ -92,8 +86,39 @@ li a:hover {
     .nav-logo {
         margin-bottom: 20px;
     }
-}
 
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dropdown {
+        position: relative;
+        text-align: center; /* Centra el texto del enlace */
+    }
+
+    .dropdown-content {
+        position: absolute;
+        width: max-content; /* Establece el ancho máximo según el contenido */
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%); /* Centra horizontalmente el menú desplegable */
+        display: none;
+        background: #E4E4E4;
+        border: 2px solid #6FB85E;
+        text-align: center;
+        z-index: 1000;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block; 
+    }
+
+    .dropdown-content-item {
+        width: 100%;
+        border-bottom: 2px solid #6FB85E;
+    }
+}
 
 .bi:hover {
     color: #6FB85E;
@@ -131,17 +156,17 @@ li a:hover {
 }
 
 footer {
-    background: #ececec;
+    background: #E4E4E4;
     color: black;
+    position: relative;
     padding: 2rem 0;
-    width: 100vw;
-    height: fit-content;
+    bottom: 0;
+    width: 100%;
     border-top: 4px solid #6FB85E;
-    display: flex;
 }
 
 .footer-content {
-    display:inline-flex;
+    display:flex;
     justify-content: space-between;
     text-align: center;
 }
@@ -151,19 +176,12 @@ footer {
     padding: 1.2rem;
     text-align: left;
     margin-left: 5%;
-    align-items: center;
-    display: block
 }
 
-.footer-titulo, .footer-titulo-SISVIANSA {
+.footer-titulo {
     padding-bottom: 1rem;
-    font-size: x-large;
-    align-items: center;
 }
-.footer-titulo-SISVIANSA {
-    font-size: xx-large;
-    justify-content: center;
-}
+
 .icon-container {
     display: flex;
     flex-direction: row;
@@ -242,7 +260,6 @@ input {
     width: 65%;
 }
 
-
 @keyframes shake {
     0%, 100% {
         transform: translateX(0);
@@ -254,6 +271,7 @@ input {
         transform: translateX(5px);
     }
 }
+
 .shake-animation {
     animation: shake 0.5s 1;
 }
@@ -268,13 +286,11 @@ label input {
     color: #FF0000;
 }
 
-
 .login-form a {
     font-size: 0.9rem;
     color: #6FB85E;
     text-decoration: none;
 }
-
 
 #btn-registro {
     background-color: #6FB85E;
@@ -289,7 +305,6 @@ label input {
 #btn-registro:hover {
     transform: scale(1.05); /* Escalar el botón al 105% cuando se pasa el cursor */
 }
-
 
 .bi {
     display: inline-block;
