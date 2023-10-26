@@ -103,7 +103,7 @@ private function registrarClienteWeb() {
                 if ($conn->query($sqlClienteWeb) === TRUE) {
 
                     // Se crea el insert
-                    $sqlUsuario = "INSERT INTO usuario (login, rol, contrasenia) VALUES ('{$nombreCompleto['nombre']}', 'cliente', '{$contrasena}')";
+                    $sqlUsuario = "INSERT INTO usuario (login, rol, contrasenia) VALUES ('{$email}', 'cliente', '{$contrasena}')";
 
                     // Se comprueba el insert
                     if ($conn->query($sqlUsuario) === TRUE) {

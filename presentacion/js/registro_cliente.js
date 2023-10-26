@@ -1,14 +1,14 @@
 import Cliente from './cliente.js';
 
 
-$(document).ready(function () {
-    const menuToggle = $('#menu-toggle');
-    const navUl = $('nav ul');
+// $(document).ready(function () {
+//     const menuToggle = $('#menu-toggle');
+//     const navUl = $('nav ul');
 
-    menuToggle.click(function () {
-        navUl.toggleClass('menu-opened');
-    });
-});
+//     menuToggle.click(function () {
+//         navUl.toggleClass('menu-opened');
+//     });
+// });
 
 
 $("#btn-registro").click(main);
@@ -28,35 +28,15 @@ function main() {
     let apartamento = Number($("#apartamento").val());
 
     let nuevoCliente = new Cliente(nombre, apellido, email, contraseña, telefono, cedula, calle, nro_puerta, esquina, barrio, bloque, apartamento)
-    let validarDatos = validarDatosAJAX(nuevoCliente)
+    // if (a) {
+        
+    // }
+    let validarDatosPHP = validarDatosAJAX(nuevoCliente)
 
 }
 
-
-
-function validarCampos(nombre, apellido, email, contraseña, telefono, cedula, calle, nro_puerta, esquina, barrio, bloque, apartamento) {
-    // Verificar si algún campo está vacío
-    
-    if (
-        nombre === "" ||
-        apellido === "" ||
-        email === "" ||
-        contraseña === "" ||
-        telefono == 0 ||
-        cedula == 0 ||
-        calle === "" ||
-        nro_puerta == 0 ||
-        esquina === "" ||
-        barrio === "" ||
-        bloque == 0 ||
-        apartamento == 0
-    ) {
-        // Devolver false si algún campo está vacío
-        return false;
-    } else {
-        // Devolver true si todos los campos están llenos
-        return true;
-    }
+function validarDatos(nuevoCliente) {
+    // VALIDAR DATOS EN JS PARA EVITAR CONSULTAS AL SERVIDOR INNECESARIAS
 }
 
 
@@ -73,7 +53,6 @@ function validarDatosAJAX(nuevoCliente) {
                 console.log(response);
                 mostrarErrores(response);
             }
-            
             if (response == 0) {
                 console.log("Redireccionando");
                 window.location.href = "../login-registro/login.html";

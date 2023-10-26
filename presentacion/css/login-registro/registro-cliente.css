@@ -26,7 +26,7 @@ body {
 
 
 nav {
-    background: #ececec;
+    background: #E4E4E4;
     border-bottom: 2px solid #6FB85E;
     display: block;
     width: 100vw;
@@ -131,13 +131,14 @@ li a:hover {
 }
 
 footer {
-    background: #ececec;
+    background: #E4E4E4;
     color: black;
     padding: 2rem 0;
     width: 100vw;
     height: fit-content;
     border-top: 4px solid #6FB85E;
     display: flex;
+    flex-direction: column;
 }
 
 .footer-content {
@@ -149,7 +150,7 @@ footer {
 .footer-item {
     flex: 1;
     padding: 1.2rem;
-    text-align: left;
+    text-align: justify;
     margin-left: 5%;
     align-items: center;
     display: block
@@ -159,6 +160,8 @@ footer {
     padding-bottom: 1rem;
     font-size: x-large;
     align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 .footer-titulo-SISVIANSA {
     font-size: xx-large;
@@ -218,7 +221,7 @@ form {
 }
 
 .login-form {
-    background: #ececec;
+    background: #E4E4E4;
     width: 60%;
     padding: 4rem;
     text-align: center;

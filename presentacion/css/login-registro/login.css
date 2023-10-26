@@ -153,13 +153,9 @@ h1 {
     font-size: 2.5rem;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-}
-
 .login {
     height: auto;
+    
 }
 
 .login-form {
@@ -167,6 +163,8 @@ form {
     width: 50%;
     padding: 2rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 input {
@@ -175,11 +173,6 @@ input {
     outline: none;
     cursor: text;
     margin-bottom: 2rem;
-}
-
-#login , #contraseña {
-    width: 50%;
-    border-bottom: #6FB85E solid;
 }
 
 #contraseña {
@@ -200,14 +193,41 @@ input {
     padding: 1rem;
     cursor: pointer;
     font-size: 1.2em;
+    transition: transform 0.2s ease; /* Agregar transición a la propiedad "transform" */
 }
-
+#btn-login:hover {
+    transform: scale(1.05); /* Escalar el botón al 105% cuando se pasa el cursor */
+}
 
 .bi {
     display: inline-block;
     vertical-align: middle;
 }
 
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25%, 75% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+}
+.shake-animation {
+    animation: shake 0.5s 1;
+}
+.label-con-error input {
+    border-bottom: #FF0000 solid;
+}
+label input {
+    border-bottom: #6FB85E solid;
+    transition: border-bottom 0.1s ease;
+}
+.label-con-error {
+    color: #FF0000;
+}
 
 
 

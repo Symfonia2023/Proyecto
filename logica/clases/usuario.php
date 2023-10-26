@@ -13,10 +13,11 @@ class usuario {
 // /////////////////////////
 // CONSTRUCTOR
 // ----------------------------------------------------------------
-    public function __construct($login,$contrasenia,$rol) {
+    public function __construct($login,$contrasenia) {
         $this->login=$login;
         $this->contrasenia=$contrasenia;
-        $this->rol=$rol;
+
+        $this->loginUsuario($login, $contrasenia);
     }
 // ----------------------------------------------------------------
 
@@ -50,13 +51,37 @@ class usuario {
 // /////////////////////////
 // Funciones de la clase.
 // --------------------------------------------------------------
-    private function validarLogin($login) {
-        // Verificar si está en la base de datos
-    } 
+    private function loginUsuario($login, $contrasenia) {
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $database = "symfonia_bd";
+
+        // Crear conexión
+        $conn = mysqli_connect($servername, $username, $password, $database);
+
+        // Consulta para verificar si el usuario existe
+        $sql = "SELECT login, contrasenia, rol FROM usuario WHERE login = '$login'";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows === 1) {
+            // El usuario existe, ahora se comprueba la contraseña
+            $row = $result->fetch_assoc();
+            $rol = $row["rol"];
+        
+            if ($contrasenia == $row['contrasenia']) {
+                // La contraseña coincide, el usuario puede iniciar sesión
+                $_SESSION['usuario'] = $login;
+                $_SESSION['rol'] = $rol;
+                return true;
+            } else {
+                return false; // Contraseña incorrecta
+            }
+        } else {
+            return false; // Usuario no encontrado
+        }        
+    }
 // --------------------------------------------------------------
-    private function validarContrasenia($contrasenia) {
-        // Verificar si la contraseña coincide con el login en la base de datos.
-    } 
 
 }
 
