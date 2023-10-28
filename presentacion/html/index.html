@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/index.css">
-    <title>Inicio</title>
+    <link rel="icon" href="../../resources/LogoSYMFONIA.png" type="image/png">
+    <title>Home</title>
 </head>
 <body>    
 
@@ -32,10 +33,48 @@
                             </svg>
                     </a>
                     <ul class="dropdown-content">
-                        <li class="dropdown-content-item"><a href="../html/login-registro/login.html">Login</a></li>
-                        <li class="dropdown-content-item"><a href="../html/login-registro/registro-cliente.html">Registro Cliente</a></li>
-                        <li class="dropdown-content-item"><a href="../html/login-registro/registro-empresa.html">Registro Empresa</a></li>
+                        <li class="dropdown-content-item" id="login"><a href="../login-registro/login.html">Login</a></li>
+                        <li class="dropdown-content-item" id="registroCliente"><a href="../login-registro/registro-cliente.html">Registro Cliente</a></li>
+                        <li class="dropdown-content-item" id="registroEmpresa"><a href="../login-registro/registro-empresa.html">Registro Empresa</a></li>
+                        <li class="dropdown-content-item" id="cerrarSesion"><a href="../login-registro/login.html">Cerrar Sesion</a></li>
                     </ul>
+                    
+                        <script>
+                            function cookieExists(cookieName) {
+                                var cookies = document.cookie;
+                                var cookieArray = cookies.split(';');
+                                var cookieFound = false;
+                    
+                                for (var i = 0; i < cookieArray.length; i++) {
+                                    var cookie = cookieArray[i].trim();
+                                    if (cookie.indexOf(cookieName + '=') === 0) {
+                                        cookieFound = true;
+                                        break;
+                                    }
+                                }
+                    
+                                var loginItem = document.getElementById('login');
+                                var registroClienteItem = document.getElementById('registroCliente');
+                                var registroEmpresaItem = document.getElementById('registroEmpresa');
+                                var cerrarSesionItem = document.getElementById('cerrarSesion');
+                    
+                                if (cookieFound) {
+                                    loginItem.style.display = "none";
+                                    registroClienteItem.style.display = "none";
+                                    registroEmpresaItem.style.display = "none";
+                                    cerrarSesionItem.style.display = "block";
+                                } else {
+                                    loginItem.style.display = "block";
+                                    registroClienteItem.style.display = "block";
+                                    registroEmpresaItem.style.display = "block";
+                                    cerrarSesionItem.style.display = "none";
+                                }
+                            }
+                    
+                            var cookieName = "nombre";
+                            cookieExists(cookieName);
+                        </script>
+
                 </li>
                 <li>
                     <a href="carrito.html" style="padding: 0.5rem;">

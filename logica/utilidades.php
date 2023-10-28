@@ -129,7 +129,7 @@ function validarNombreJuridico($nombre_juridico) {
 function validarLogin($login) { // Función para validar la longitud del atributo y no generar errores en la base de datos.
     $login = trim($login); // Eliminar espacios al principio y al final
     $login = preg_replace('/\s+/', ' ', $login); // Reemplazar múltiples espacios por uno solo
-    if (strlen($login) > 30 || !preg_match('/^[a-zA-Z0-9\s]+$/', $login)) {
+    if (strlen($login) > 100 || !preg_match('/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/', $login)) {
         return true;
     } else {
         return false;

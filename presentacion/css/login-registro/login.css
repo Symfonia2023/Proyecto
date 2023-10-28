@@ -179,6 +179,32 @@ input {
     margin-bottom: 0.6rem;
 }
 
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25%, 75% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+.shake-animation {
+    animation: shake 0.5s 1;
+}
+.label-con-error input {
+    border-bottom: #FF0000 solid;
+}
+label input {
+    border-bottom: #6FB85E solid;
+    transition: border-bottom 0.1s ease;
+}
+.label-con-error {
+    color: #FF0000;
+}
+
 .login-form a {
     font-size: 0.9rem;
     color: #6FB85E;

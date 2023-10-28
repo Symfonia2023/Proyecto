@@ -27,6 +27,7 @@ function validarDatosLogin(data) {
                 console.log("Error de autenticación");
             } else if (response === 0) {
                 alert("Ingreso exitoso");
+                document.cookie = "nombre="+login;
                 window.location.href = "../index.html";
             } else {
                 console.log(response);

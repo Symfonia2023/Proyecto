@@ -26,6 +26,7 @@ class clienteWeb extends cliente { // Clase que hereda atributos.
             $this->setAutorizacion();
             $this->setCI($CI);
             $this->setNombreCompleto($nombre_completo['nombre'], $nombre_completo['apellido']);
+            $this->setContraseña($contrasena);
 
             $this->registrarClienteWeb();
     }
@@ -130,8 +131,6 @@ private function registrarClienteWeb() {
         // Cierra la conexión
         mysqli_close($conn);
     }
-}
-
-
+    }
 }
 ?>
