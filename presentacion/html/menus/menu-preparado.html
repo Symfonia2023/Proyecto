@@ -37,6 +37,41 @@
                         <li class="dropdown-content-item"><a href="../login-registro/registro-cliente.html">Registro Cliente</a></li>
                         <li class="dropdown-content-item"><a href="../login-registro/registro-empresa.html">Registro Empresa</a></li>
                     </ul>
+                    <script>
+                        function cookieExists(cookieName) {
+                            var cookies = document.cookie;
+                            var cookieArray = cookies.split(';');
+                            var cookieFound = false;
+                
+                            for (var i = 0; i < cookieArray.length; i++) {
+                                var cookie = cookieArray[i].trim();
+                                if (cookie.indexOf(cookieName + '=') === 0) {
+                                    cookieFound = true;
+                                    break;
+                                }
+                            }
+                
+                            var loginItem = document.getElementById('login'); 
+                            var registroClienteItem = document.getElementById('registroCliente');
+                            var registroEmpresaItem = document.getElementById('registroEmpresa');
+                            var cerrarSesionItem = document.getElementById('cerrarSesion');
+                
+                            if (cookieFound) {
+                                loginItem.style.display = "none";
+                                registroClienteItem.style.display = "none";
+                                registroEmpresaItem.style.display = "none";
+                                cerrarSesionItem.style.display = "block";
+                            } else {
+                                loginItem.style.display = "block";
+                                registroClienteItem.style.display = "block";
+                                registroEmpresaItem.style.display = "block";
+                                cerrarSesionItem.style.display = "none";
+                            }
+                        }
+                
+                        var cookieName = "nombre";
+                        cookieExists(cookieName);
+                    </script>
                 </li>
                 <li>
                     <a href="../carrito.html" style="padding: 0.5rem;">
@@ -49,40 +84,315 @@
         </ul>
     </nav>
 
-    <section class="section-menu">
-            <p>MENUS VEGETARIANOS - SEMANAL</p>
-        <section class="section-content">
+    <!-- Menus semanales -->
+    <section class="section-menu-semanal">
+        <h1 id="menu-semanal-title">Menús Semanales</h1>
+        <section class="sectionMenu-content">
+            <!-- Menus Estandares -->
+            <h2 class="tituloTipoMenu">Menús Estándar</h2>
             <section class="item-content">
-                <section class="section-item"><input type="submit" value="Menu 1"></section>
+                <section class="menu-container">
+                    <section class="fotoMenu"></section>
+                    <section class="tituloMenu">
+                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
+                    </section>
+                    <section class="botonesMenu">
+                        <button class="botonMenu">Ver Comidas</button>
+                        <button class="botonMenu">Añadir al Carrito</button>
+                    </section>
+                </section>
+                <section class="menu-container">
+                    <section class="fotoMenu"></section>
+                    <section class="tituloMenu">
+                        <h2>Vianda Vegetariana Tradicional<br><h3>Semanal | Menú sin Gluten</h3></h2>
+                    </section>
+                    <section class="botonesMenu">
+                        <button class="botonMenu">Ver Comidas</button>
+                        <button class="botonMenu">Añadir al Carrito</button>
+                    </section>
+                </section>
             </section>
-            <section class="item-content">
-                <section class="section-item"><input type="submit" value="Menu 2"></section>
-            </section>
-            <section class="item-content">
-                <section class="section-item"><input type="submit" value="Menu 3"></section>
-            </section>
-            <section class="item-content">
-                <section class="section-item"><input type="submit" value="Menu 4"></section>
-            </section>
-        </section>
 
-        <p>MENUS VEGANOS - SEMANAL</p>
-        <section class="section-content">
-            <section class="item-content" >
-                <section class="section-item"><input type="submit" value="Menu 1"></section>
-            </section>
+            <!-- Menús Vegetarianos -->
+            <h2 class="tituloTipoMenu">Menús Vegetarianos</h2>
             <section class="item-content">
-                <section class="section-item"><input type="submit" value="Menu 2"></section>
+                <section class="menu-container">
+                    <section class="fotoMenu"></section>
+                    <section class="tituloMenu">
+                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
+                    </section>
+                    <section class="botonesMenu">
+                        <button class="botonMenu">Ver Comidas</button>
+                        <button class="botonMenu">Añadir al Carrito</button>
+                    </section>
+                </section>
             </section>
+
+            <!-- Menús Veganos -->
+            <h2 class="tituloTipoMenu">Menús Veganos</h2>
             <section class="item-content">
-                <section class="section-item"><input type="submit" value="Menu 3"></section>
+                <section class="menu-container">
+                    <section class="fotoMenu"></section>
+                    <section class="tituloMenu">
+                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
+                    </section>
+                    <section class="botonesMenu">
+                        <button class="botonMenu">Ver Comidas</button>
+                        <button class="botonMenu">Añadir al Carrito</button>
+                    </section>
+                </section>
             </section>
+
+            <!-- Menús Celíacos -->
+            <h2 class="tituloTipoMenu">Menús Celíacos</h2>
             <section class="item-content">
-                <section class="section-item"><input type="submit" value="Menu 4"></section>
+                <section class="menu-container">
+                    <section class="fotoMenu"></section>
+                    <section class="tituloMenu">
+                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
+                    </section>
+                    <section class="botonesMenu">
+                        <button class="botonMenu">Ver Comidas</button>
+                        <button class="botonMenu">Añadir al Carrito</button>
+                    </section>
+                </section>
+                <section class="menu-container">
+                    <section class="fotoMenu"></section>
+                    <section class="tituloMenu">
+                        <h2>Vianda Vegetariana Tradicional<br><h3>Semanal | Menú sin Gluten</h3></h2>
+                    </section>
+                    <section class="botonesMenu">
+                        <button class="botonMenu">Ver Comidas</button>
+                        <button class="botonMenu">Añadir al Carrito</button>
+                    </section>
+                </section>
+            </section>
+
+            <!-- Menús Ovolacteovegetarianos -->
+            <h2 class="tituloTipoMenu">Menús Ovolacteovegetarianos</h2>
+            <section class="item-content">
+                <section class="menu-container">
+                    <section class="fotoMenu"></section>
+                    <section class="tituloMenu">
+                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
+                    </section>
+                    <section class="botonesMenu">
+                        <button class="botonMenu">Ver Comidas</button>
+                        <button class="botonMenu">Añadir al Carrito</button>
+                    </section>
+                </section>
+            </section>
+
+        </section>
+    </section>
+
+
+
+    <!-- Menus semanales -->
+    <section class="section-menu-quincenal">
+        <h1 id="menu-quincenal-title">Menús Quincenal</h1>
+    <section class="sectionMenu-content">
+
+        <!-- Menus Estandares -->
+        <h2 class="tituloTipoMenu">Menús Estándar</h2>
+        <section class="item-content">
+                <section class="menu-container">
+                    <section class="fotoMenu"></section>
+                    <section class="tituloMenu">
+                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
+                    </section>
+                    <section class="botonesMenu">
+                        <button class="botonMenu">Ver Comidas</button>
+                        <button class="botonMenu">Añadir al Carrito</button>
+                    </section>
+                </section>
+                <section class="menu-container">
+                    <section class="fotoMenu"></section>
+                    <section class="tituloMenu">
+                        <h2>Vianda Vegetariana Tradicional<br><h3>Semanal | Menú sin Gluten</h3></h2>
+                    </section>
+                    <section class="botonesMenu">
+                        <button class="botonMenu">Ver Comidas</button>
+                        <button class="botonMenu">Añadir al Carrito</button>
+                    </section>
+                </section>
+            </section>
+
+            <!-- Menús Vegetarianos -->
+            <h2 class="tituloTipoMenu">Menús Vegetarianos</h2>
+            <section class="item-content">
+                <section class="menu-container">
+                    <section class="fotoMenu"></section>
+                    <section class="tituloMenu">
+                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
+                    </section>
+                    <section class="botonesMenu">
+                        <button class="botonMenu">Ver Comidas</button>
+                        <button class="botonMenu">Añadir al Carrito</button>
+                    </section>
+                </section>
+            </section>
+
+            <!-- Menús Veganos -->
+            <h2 class="tituloTipoMenu">Menús Veganos</h2>
+            <section class="item-content">
+                <section class="menu-container">
+                    <section class="fotoMenu"></section>
+                    <section class="tituloMenu">
+                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
+                    </section>
+                    <section class="botonesMenu">
+                        <button class="botonMenu">Ver Comidas</button>
+                        <button class="botonMenu">Añadir al Carrito</button>
+                    </section>
+                </section>
+            </section>
+
+            <!-- Menús Celíacos -->
+            <h2 class="tituloTipoMenu">Menús Celíacos</h2>
+            <section class="item-content">
+                <section class="menu-container">
+                    <section class="fotoMenu"></section>
+                    <section class="tituloMenu">
+                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
+                    </section>
+                    <section class="botonesMenu">
+                        <button class="botonMenu">Ver Comidas</button>
+                        <button class="botonMenu">Añadir al Carrito</button>
+                    </section>
+                </section>
+                <section class="menu-container">
+                    <section class="fotoMenu"></section>
+                    <section class="tituloMenu">
+                        <h2>Vianda Vegetariana Tradicional<br><h3>Semanal | Menú sin Gluten</h3></h2>
+                    </section>
+                    <section class="botonesMenu">
+                        <button class="botonMenu">Ver Comidas</button>
+                        <button class="botonMenu">Añadir al Carrito</button>
+                    </section>
+                </section>
+            </section>
+
+            <!-- Menús Ovolacteovegetarianos -->
+            <h2 class="tituloTipoMenu">Menús Ovolacteovegetarianos</h2>
+            <section class="item-content">
+                <section class="menu-container">
+                    <section class="fotoMenu"></section>
+                    <section class="tituloMenu">
+                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
+                    </section>
+                    <section class="botonesMenu">
+                        <button class="botonMenu">Ver Comidas</button>
+                        <button class="botonMenu">Añadir al Carrito</button>
+                    </section>
+                </section>
+            </section>
+        
+    </section>
+</section>
+
+<!-- Menus semanales -->
+<section class="section-menu-mensual">
+    <h1 id="menu-mensual-title">Menús Mensual</h1>
+    <section class="sectionMenu-content">
+    <!-- Menus Estandares -->
+    <h2 class="tituloTipoMenu">Menús Estándar</h2>
+    <section class="item-content">
+                <section class="menu-container">
+                    <section class="fotoMenu"></section>
+                    <section class="tituloMenu">
+                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
+                    </section>
+                    <section class="botonesMenu">
+                        <button class="botonMenu">Ver Comidas</button>
+                        <button class="botonMenu">Añadir al Carrito</button>
+                    </section>
+                </section>
+                <section class="menu-container">
+                    <section class="fotoMenu"></section>
+                    <section class="tituloMenu">
+                        <h2>Vianda Vegetariana Tradicional<br><h3>Semanal | Menú sin Gluten</h3></h2>
+                    </section>
+                    <section class="botonesMenu">
+                        <button class="botonMenu">Ver Comidas</button>
+                        <button class="botonMenu">Añadir al Carrito</button>
+                    </section>
+                </section>
+            </section>
+
+            <!-- Menús Vegetarianos -->
+            <h2 class="tituloTipoMenu">Menús Vegetarianos</h2>
+            <section class="item-content">
+                <section class="menu-container">
+                    <section class="fotoMenu"></section>
+                    <section class="tituloMenu">
+                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
+                    </section>
+                    <section class="botonesMenu">
+                        <button class="botonMenu">Ver Comidas</button>
+                        <button class="botonMenu">Añadir al Carrito</button>
+                    </section>
+                </section>
+            </section>
+
+            <!-- Menús Veganos -->
+            <h2 class="tituloTipoMenu">Menús Veganos</h2>
+            <section class="item-content">
+                <section class="menu-container">
+                    <section class="fotoMenu"></section>
+                    <section class="tituloMenu">
+                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
+                    </section>
+                    <section class="botonesMenu">
+                        <button class="botonMenu">Ver Comidas</button>
+                        <button class="botonMenu">Añadir al Carrito</button>
+                    </section>
+                </section>
+            </section>
+
+            <!-- Menús Celíacos -->
+            <h2 class="tituloTipoMenu">Menús Celíacos</h2>
+            <section class="item-content">
+                <section class="menu-container">
+                    <section class="fotoMenu"></section>
+                    <section class="tituloMenu">
+                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
+                    </section>
+                    <section class="botonesMenu">
+                        <button class="botonMenu">Ver Comidas</button>
+                        <button class="botonMenu">Añadir al Carrito</button>
+                    </section>
+                </section>
+                <section class="menu-container">
+                    <section class="fotoMenu"></section>
+                    <section class="tituloMenu">
+                        <h2>Vianda Vegetariana Tradicional<br><h3>Semanal | Menú sin Gluten</h3></h2>
+                    </section>
+                    <section class="botonesMenu">
+                        <button class="botonMenu">Ver Comidas</button>
+                        <button class="botonMenu">Añadir al Carrito</button>
+                    </section>
+                </section>
+            </section>
+
+            <!-- Menús Ovolacteovegetarianos -->
+            <h2 class="tituloTipoMenu">Menús Ovolacteovegetarianos</h2>
+            <section class="item-content">
+                <section class="menu-container">
+                    <section class="fotoMenu"></section>
+                    <section class="tituloMenu">
+                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
+                    </section>
+                    <section class="botonesMenu">
+                        <button class="botonMenu">Ver Comidas</button>
+                        <button class="botonMenu">Añadir al Carrito</button>
+                    </section>
+                </section>
             </section>
         </section>
     </section>
 
+    
     <footer>
         <section class="footer-content">
             <section class="footer-item">
@@ -90,7 +400,7 @@
                     SOBRE NOSOTROS
                 </p>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo eum voluptatem natus.
+                    Bienvenido a SISVIANSA, tu opción de confianza para disfrutar de comidas saludables y deliciosas sin sacrificar tiempo ni sabor. En SISVIANSA, creemos en la importancia de una alimentación equilibrada y deliciosa, y nos esforzamos por ofrecer soluciones gastronómicas que se adapten a tu estilo de vida ocupado.
                 </p>       
             </section>
             <section class="footer-item">
@@ -127,5 +437,8 @@
         </section>
     </footer>
 
+
+    <script src="../../js/jquery-3.7.0.min.js"></script>
+    <script src="../../js/menusPreparados.js"></script>
 </body>
 </html>
