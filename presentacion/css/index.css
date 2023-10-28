@@ -191,6 +191,15 @@ footer {
         display: block;
     }
 
+    .nav-logo {
+        visibility: visible;
+        margin-top: 1rem;
+    }
+
+    .nombre-logo {
+        display: none;
+    }
+
     .footer-content {
         display: flex;
         flex-direction: column;
