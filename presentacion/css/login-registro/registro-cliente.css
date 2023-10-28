@@ -11,8 +11,9 @@
 }
 
 body {
-    background: url(../../resources/background_index.jpg);
+    background: url(../../resources/background_index.jpg) no-repeat;
     background-attachment: fixed;
+    background-position: cover;
 
     align-items: center;
     justify-content: center;

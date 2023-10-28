@@ -33,12 +33,11 @@
                             </svg>
                     </a>
                     <ul class="dropdown-content">
-                        <li class="dropdown-content-item" id="login"><a href="../login-registro/login.html">Login</a></li>
-                        <li class="dropdown-content-item" id="registroCliente"><a href="../login-registro/registro-cliente.html">Registro Cliente</a></li>
-                        <li class="dropdown-content-item" id="registroEmpresa"><a href="../login-registro/registro-empresa.html">Registro Empresa</a></li>
-                        <li class="dropdown-content-item" id="cerrarSesion"><a href="../login-registro/login.html">Cerrar Sesion</a></li>
+                        <li class="dropdown-content-item" id="login"><a href="../html/login-registro/login.html">Login</a></li>
+                        <li class="dropdown-content-item" id="registroCliente"><a href="../html/login-registro/registro-cliente.html">Registro Cliente</a></li>
+                        <li class="dropdown-content-item" id="registroEmpresa"><a href="../html/login-registro/registro-empresa.html">Registro Empresa</a></li>
+                        <li class="dropdown-content-item" id="cerrarSesion"><a href="index.html">Cerrar Sesion</a></li>
                     </ul>
-                    
                         <script>
                             function cookieExists(cookieName) {
                                 var cookies = document.cookie;
@@ -53,7 +52,7 @@
                                     }
                                 }
                     
-                                var loginItem = document.getElementById('login');
+                                var loginItem = document.getElementById('login'); 
                                 var registroClienteItem = document.getElementById('registroCliente');
                                 var registroEmpresaItem = document.getElementById('registroEmpresa');
                                 var cerrarSesionItem = document.getElementById('cerrarSesion');
@@ -74,7 +73,6 @@
                             var cookieName = "nombre";
                             cookieExists(cookieName);
                         </script>
-
                 </li>
                 <li>
                     <a href="carrito.html" style="padding: 0.5rem;">
