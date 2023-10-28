@@ -98,7 +98,7 @@ li a:hover {
 
 
 .section-menu-semanal h1, .section-menu-quincenal h1, .section-menu-mensual h1, .tituloTipoMenu{
-    border-bottom: 5px solid #3be115;
+    border-bottom: 5px solid #6FB85E;
     font-size: xx-large;
     background-color: white;
     margin-bottom: 1rem;
@@ -106,8 +106,6 @@ li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.7);
     transition: 0.1s;
 }
 
@@ -116,6 +114,10 @@ li a:hover {
     cursor: pointer; 
 }
 
+
+#menu-semanal-title, #menu-quincenal-title, #menu-mensual-title{
+    padding: 1rem;
+}
 
 .tituloTipoMenu {
     font-size: x-large;
@@ -182,7 +184,7 @@ li a:hover {
 }
 
 .tituloMenu h2{
-    border-bottom: 2px solid #27bc05;
+    border-bottom: 2px solid #6FB85E;
 }
 
 .botonesMenu {
@@ -275,7 +277,12 @@ footer {
     }
 
     .nav-logo {
-        margin-bottom: 20px;
+        visibility: visible;
+        margin-top: 1rem;
+    }
+
+    .nombre-logo {
+        display: none;
     }
 
     .footer-content {

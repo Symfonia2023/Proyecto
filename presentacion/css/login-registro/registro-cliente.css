@@ -85,7 +85,12 @@ li a:hover {
     }
 
     .nav-logo {
-        margin-bottom: 20px;
+        visibility: visible;
+        margin-top: 1rem;
+    }
+
+    .nombre-logo {
+        display: none;
     }
 
     .footer-content {
