@@ -11,7 +11,8 @@
 }
 
 body {
-    background: url(../resources/background_index.jpg) no-repeat;
+    background: url(../resources/background_index.jpg) no-repeat fixed;
+    background-size: cover; 
 }
 
 nav {
