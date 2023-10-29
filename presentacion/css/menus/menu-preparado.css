@@ -61,8 +61,6 @@ li a:hover {
     position: absolute;
     width: fit-content;
     overflow: auto;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .dropdown-content-item{
@@ -83,45 +81,44 @@ li a:hover {
 }
 
 
-.section-menu-semanal, .section-menu-quincenal, .section-menu-mensual {
+#section-menu-semanal, #section-menu-quincenal, #section-menu-mensual {
     text-align: center;
     align-items: center;
     justify-content: center;
     display: flex;
     flex-direction: column;
+    width: fit-content;
     height: fit-content;
-    margin: 5% 2% 5% 2%;
-    width: 95%;
-    padding: 1rem;
+    margin: auto; 
+    padding: 2rem 3rem 1rem 3rem;
 }
 
 
-.section-menu-semanal h1, .section-menu-quincenal h1, .section-menu-mensual h1, .tituloTipoMenu{
-    border-bottom: 5px solid #6FB85E;
-    font-size: xx-large;
+#section-menu-semanal h1, #section-menu-quincenal h1, #section-menu-mensual h1{
+    border-bottom: 3px solid #6FB85E;
+    font-size: 1rem;
     background-color: white;
     margin-bottom: 1rem;
-    width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: 0.1s;
 }
 
-.section-menu-semanal h1:hover, .section-menu-quincenal h1:hover, .section-menu-mensual h1:hover, .tituloTipoMenu:hover {
+#section-menu-semanal h1:hover, #section-menu-quincenal h1:hover, #section-menu-mensual h1:hover{
     transform: scale(1.1);
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 
 #menu-semanal-title, #menu-quincenal-title, #menu-mensual-title{
-    padding: 1rem;
+    padding: 3rem;
+    font-size: 1.2rem;
+    width: 10rem;
 }
 
 .tituloTipoMenu {
-    font-size: x-large;
-    width: 15%;
-    margin-top: 2rem;
+    padding: 1rem;
 }
 
 .sectionMenu-content {
@@ -133,7 +130,6 @@ li a:hover {
     width: 100%;
     height: fit-content;
     margin-right: 20px;
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.7);
 }
 
 .item-content {
@@ -143,20 +139,16 @@ li a:hover {
     /* grid-column-gap: 1rem; Añade el margen entre columnas aquí */
     align-items: center;
     justify-content: center;
-    margin-bottom: 1rem;
 }
-
-
 
 .menu-container {
-    background-color: #eeeeee;
-    width: 300px;
-    height: 400px;
-    margin: 0 auto;
+    background-color: #E4E4E4;
+    width: 15rem;
+    height: 30rem;
+    margin: 1rem 1rem 2rem 1rem;
     padding: 0.5rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    border: 2px solid #6FB85E;
 }
-
 
 .fotoMenu {
     height: 30%;
@@ -165,7 +157,7 @@ li a:hover {
     display: flex;
     flex-direction: column;
     width: 100%;
-    background: url(../../resources/LogoSYMFONIA.png);
+    background: url(../../resources/icono_menu.png);
     background-size: contain; /* Ajusta el tamaño para que la imagen quepa en la sección */
     background-position: center; /* Centra la imagen vertical y horizontalmente */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -182,10 +174,6 @@ li a:hover {
     border-bottom: 1.5px solid black; /* Borde inferior de 3 píxeles de ancho */
 }
 
-.tituloMenu h2{
-    border-bottom: 2px solid #6FB85E;
-}
-
 .botonesMenu {
     justify-content: center;
     align-items: center;
@@ -195,14 +183,11 @@ li a:hover {
     width: 100%
 }
 .botonMenu {
-    background-color: #1bc651; /* Color de fondo del botón */
-    color: #fff; /* Color del texto del botón */
+    background-color: #6FB85E; /* Color de fondo del botón */
+    color: #E4E4E4; /* Color del texto del botón */
     border: none; /* Quita el borde del botón */
-    padding: 10px 20px; /* Espaciado interno del botón */
+    padding: 1rem; /* Espaciado interno del botón */
     transition: transform 0.2s; /* Agrega una transición suave para la animación de agrandar */
-
-    /* Si deseas bordes redondeados, puedes agregar esto */
-    border-radius: 5px;
     margin-bottom: 0.5rem;
 }
 
@@ -314,5 +299,11 @@ footer {
     .dropdown-content-item {
         width: 100%;
         border-bottom: 2px solid #6FB85E;
+    }
+
+    .item-content {
+        display: flex;
+        flex-direction: column; /* Coloca los elementos en columna */
+        align-items: center; /* Centra los elementos horizontalmente */
     }
 }
