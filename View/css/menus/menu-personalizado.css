@@ -1,0 +1,245 @@
+@font-face {
+    font-family: fuente1;
+    src: url(../../fonts/thryn___.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: fuente1;
+    font-weight: 200;
+}
+
+body {
+    background: url(../../resources/background_index.jpg) no-repeat fixed;
+    background-size: cover; 
+}
+
+nav {
+    background: #E4E4E4;
+    border-bottom: 4px solid #6FB85E;
+    padding: 1rem;
+}
+  
+ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+}
+  
+nav li {
+    display: inline-block;
+}
+  
+nav li a {
+    display: block;
+    color: black;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    text-align: center;
+}
+
+.nav-logo {
+    display: flex;
+    font-size: 2.5rem; 
+    align-items: center;
+}
+  
+li a:hover {
+    text-decoration: 3px underline #6FB85E;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: fit-content;
+    overflow: auto;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dropdown-content-item{
+    width: 100%;
+    border-bottom: 2px solid #6FB85E;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    background: #E4E4E4;
+    border: 2px solid #6FB85E;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+.section-menu {
+    background: #ffff;
+    display: block;  
+    height: auto;
+    margin: 5% 20% 5% 20%;
+    border-bottom: 4px solid #6FB85E;
+    padding: 1rem;
+}
+
+.section-menu p {
+    margin-bottom: 1rem;
+}
+
+.section-content {
+    background: #E4E4E4;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.item-content {
+    flex-basis: 25%;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.section-item {
+    text-align: center;
+    margin: 1.5rem;
+}
+
+
+.section-item:hover {
+    transform: scale(1.05);
+}
+  
+.section-menu img {
+    width: 100%;
+    max-width: 10rem;
+    height: 80%;
+    object-fit: cover;
+}
+
+.section-menu input {
+    border: none;
+    background: #6FB85E;
+    padding: 0.5rem;
+    color: #ffff;
+    margin-top: -1rem;
+    cursor: pointer;
+    width: 10rem;
+}
+
+.btn-section:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+  
+footer {
+    background: #E4E4E4;
+    color: black;
+    position: relative;
+    padding: 2rem 0;
+    bottom: 0;
+    width: 100%;
+    border-top: 4px solid #6FB85E;
+}
+
+.footer-content {
+    display:flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.footer-item {
+    flex: 1;
+    padding: 1.2rem;
+    text-align: left;
+    margin-left: 5%;
+}
+
+.footer-titulo {
+    padding-bottom: 1rem;
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+  }
+
+.icon-container p {
+    margin-left: 1rem;
+}
+
+.icon {
+    margin-bottom: 1rem;
+}
+
+.bi:hover {
+    color: #6FB85E;
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        text-align: center;
+    }
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .nav-logo {
+        visibility: visible;
+        margin-top: 1rem;
+    }
+
+    .nombre-logo {
+        display: none;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dropdown {
+        position: relative;
+        text-align: center; /* Centra el texto del enlace */
+    }
+
+    .dropdown-content {
+        position: absolute;
+        width: max-content; /* Establece el ancho máximo según el contenido */
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%); /* Centra horizontalmente el menú desplegable */
+        display: none;
+        background: #E4E4E4;
+        border: 2px solid #6FB85E;
+        text-align: center;
+        z-index: 1000;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block; 
+    }
+
+    .dropdown-content-item {
+        width: 100%;
+        border-bottom: 2px solid #6FB85E;
+    }
+}

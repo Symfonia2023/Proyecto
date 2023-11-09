@@ -16,7 +16,7 @@ function main() {
 
 function validarDatosLogin(data) {
     $.ajax({
-        url: '../../../logica/validarDatosLogin.php',
+        url: '../../../Model/validarDatosLogin.php',
         type: 'POST', 
         data: JSON.stringify(data), // Convierte el objeto a JSON
         contentType: 'application/json', // Indica que el contenido es JSON
@@ -27,8 +27,7 @@ function validarDatosLogin(data) {
                 console.log("Error de autenticación");
             } else if (response === 0) {
                 alert("Ingreso exitoso");
-                document.cookie = "nombre="+login;
-                window.location.href = "../index.html";
+                window.location.href = "../../../index.php";
             } else {
                 console.log(response);
                 mostrarErrores(response);

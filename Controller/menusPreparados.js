@@ -15,7 +15,7 @@ function toggleContenido(tipo) {
 
     if (sectionMenuContent.css("display") === "none") {
         sectionMenuContent.css("display", "flex");
-        sectionMenuContent.hide().fadeIn(400); // Aplicar fadeIn después de cambiar a display: flex
+        sectionMenuContent.hide().fadeIn(400);
     } else {
         sectionMenuContent.fadeOut(400, function() {
             sectionMenuContent.css("display", "none");

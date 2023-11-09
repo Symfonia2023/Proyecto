@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/menus/menu-preparado.css">
+    <link rel="icon" href="../../resources/LogoSYMFONIA.png" type="image/png">
     <title>Menus Preparados</title>
 </head>
 <body>
@@ -13,15 +14,14 @@
             <li class="nav-logo"><img src="../../resources/logo_web.svg" width="200px"><p class="nombre-logo">SISVIANSA</p></li>
 
             <section>
-                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../../../index.php">Inicio</a></li>
                 <li class="dropdown">
                     <a href="#">Comprar Menú</a>
                     <ul class="dropdown-content">
-                        <li class="dropdown-content-item"><a href="../menus/menu-preparado.html">Menús Preparados</a></li>
-                        <li class="dropdown-content-item"><a href="../menus/menu-personalizado.html">Menú Personalizado</a></li>
+                        <li class="dropdown-content-item"><a href="../menus/menu-preparado.php">Menús Preparados</a></li>
                     </ul>
                 </li>
-                <li><a href="../preguntas-frecuentes.html">Preguntas Frecuentes</a></li>    
+                <li><a href="../preguntas-frecuentes.php">Preguntas Frecuentes</a></li>    
             </section>
 
             <section>
@@ -31,49 +31,33 @@
                             <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
                             </svg>
                     </a>
-                    <ul class="dropdown-content">
-                        <li class="dropdown-content-item"><a href="../login-registro/login.html">Login</a></li>
-                        <li class="dropdown-content-item"><a href="../login-registro/registro-cliente.html">Registro Cliente</a></li>
-                        <li class="dropdown-content-item"><a href="../login-registro/registro-empresa.html">Registro Empresa</a></li>
-                    </ul>
-                    <script>
-                        function cookieExists(cookieName) {
-                            var cookies = document.cookie;
-                            var cookieArray = cookies.split(';');
-                            var cookieFound = false;
-                
-                            for (var i = 0; i < cookieArray.length; i++) {
-                                var cookie = cookieArray[i].trim();
-                                if (cookie.indexOf(cookieName + '=') === 0) {
-                                    cookieFound = true;
-                                    break;
-                                }
-                            }
-                
-                            var loginItem = document.getElementById('login'); 
-                            var registroClienteItem = document.getElementById('registroCliente');
-                            var registroEmpresaItem = document.getElementById('registroEmpresa');
-                            var cerrarSesionItem = document.getElementById('cerrarSesion');
-                
-                            if (cookieFound) {
-                                loginItem.style.display = "none";
-                                registroClienteItem.style.display = "none";
-                                registroEmpresaItem.style.display = "none";
-                                cerrarSesionItem.style.display = "block";
-                            } else {
-                                loginItem.style.display = "block";
-                                registroClienteItem.style.display = "block";
-                                registroEmpresaItem.style.display = "block";
-                                cerrarSesionItem.style.display = "none";
-                            }
+                    <?php
+                        session_start(); // Iniciar la sesión
+
+                        // Verificar si la variable de sesión 'usuario' está definida
+                        if (isset($_SESSION['usuario'])) {
+                            // Usuario autenticado
+                            // Mostrar elementos cuando la sesión está establecida
+                        ?>
+                            <ul class="dropdown-content">
+                                <li class="dropdown-content-item" id="cerrarSesion"><a href="Model/cerrar_sesion.php">Cerrar Sesión</a></li>
+                            </ul>
+                        <?php
+                        } else {
+                            // Usuario no autenticado
+                            // Mostrar elementos cuando la sesión no está establecida
+                        ?>
+                            <ul class="dropdown-content">
+                                <li class="dropdown-content-item" id="login"><a href="view/html/login-registro/login.php">Login</a></li>
+                                <li class="dropdown-content-item" id="registroCliente"><a href="view/html/login-registro/registro-cliente.php">Registro Cliente</a></li>
+                                <li class="dropdown-content-item" id="registroEmpresa"><a href="view/html/login-registro/registro-empresa.php">Registro Empresa</a></li>
+                            </ul>
+                        <?php
                         }
-                
-                        var cookieName = "nombre";
-                        cookieExists(cookieName);
-                    </script>
+                    ?>
                 </li>
                 <li>
-                    <a href="../carrito.html" style="padding: 0.5rem;">
+                    <a href="../carrito.php" style="padding: 0.5rem;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
                             <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
                             </svg>

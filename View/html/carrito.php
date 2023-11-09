@@ -1,79 +1,71 @@
- <!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/login-registro/login.css">
-    <link rel="icon" href="../../resources/LogoSYMFONIA.png" type="image/png">
-    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="../css/carrito.css">
+    <link rel="icon" href="../resources/LogoSYMFONIA.png" type="image/png">
+    <title>Carrito</title>
 </head>
 <body>
 
     <nav>
         <ul>
-            <li class="nav-logo"><img src="../../resources/logo_web.svg" width="200px"><p class="nombre-logo">SISVIANSA</p></li>
+            <li class="nav-logo"><img src="../resources/logo_web.svg" width="200px"><p class="nombre-logo">SISVIANSA</p></li>
 
             <section>
-                <li><a href="../index.html" target="_parent">Inicio</a></li>
+                <li><a href="../../index.php">Inicio</a></li>
                 <li class="dropdown">
                     <a href="#">Comprar Menú</a>
                     <ul class="dropdown-content">
-                        <li class="dropdown-content-item"><a href="../menus/menu-preparado.html">Menús Preparados</a></li>
-                        <li class="dropdown-content-item"><a href="../menus/menu-personalizado.html">Menú Personalizado</a></li>
+                        <li class="dropdown-content-item"><a href="../html/menus/menu-preparado.php">Menús Preparados</a></li>
                     </ul>
                 </li>
-                <li><a href="../preguntas-frecuentes.html">Preguntas Frecuentes</a></li>    
+                <li><a href="../html/preguntas-frecuentes.php">Preguntas Frecuentes</a></li>    
             </section>
 
             <section>
                 <li class="dropdown">
                     <a href="#" style="padding: 0.2rem">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                            </svg>
                     </a>
-                    <ul class="dropdown-content">
-                        <li class="dropdown-content-item"><a href="../login-registro/login.html">Login</a></li>
-                        <li class="dropdown-content-item"><a href="../login-registro/registro-cliente.html">Registro Cliente</a></li>
-                        <li class="dropdown-content-item"><a href="../login-registro/registro-empresa.html">Registro Empresa</a></li>
-                    </ul>
+                    <?php
+                        session_start(); // Iniciar la sesión
+
+                        // Verificar si la variable de sesión 'usuario' está definida
+                        if (isset($_SESSION['usuario'])) {
+                            // Usuario autenticado
+                            // Mostrar elementos cuando la sesión está establecida
+                        ?>
+                            <ul class="dropdown-content">
+                                <li class="dropdown-content-item" id="cerrarSesion"><a href="Model/cerrar_sesion.php">Cerrar Sesión</a></li>
+                            </ul>
+                        <?php
+                        } else {
+                            // Usuario no autenticado
+                            // Mostrar elementos cuando la sesión no está establecida
+                        ?>
+                            <ul class="dropdown-content">
+                                <li class="dropdown-content-item" id="login"><a href="view/html/login-registro/login.php">Login</a></li>
+                                <li class="dropdown-content-item" id="registroCliente"><a href="view/html/login-registro/registro-cliente.php">Registro Cliente</a></li>
+                                <li class="dropdown-content-item" id="registroEmpresa"><a href="view/html/login-registro/registro-empresa.php">Registro Empresa</a></li>
+                            </ul>
+                        <?php
+                        }
+                    ?>
                 </li>
                 <li>
-                    <a href="../carrito.html" style="padding: 0.5rem;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+                    <a href="carrito.php" style="padding: 0.5rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
                             <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
-                        </svg>
+                            </svg>
                     </a>
                 </li>
             </section>
         </ul>
     </nav>
-
-
-    <section class="login">
-        <section class="login-img">
-            <img src="../../resources/background-login.jpg">
-        </section>
-        <section class="login-form">
-            <h1>Iniciar Sesión</h1>
-                <label for="login">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#6FB85E" class="bi bi-upc" viewBox="0 0 16 16">
-                    <path d="M3 4.5a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-7zm3 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7z"/>
-                  </svg>
-                  <input type="text" id="login" placeholder="CI / ID">
-                </label>
-                <label for="contraseña">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#6FB85E" class="bi bi-lock-fill" viewBox="0 0 16 16">
-                        <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
-                      </svg>
-                    <input type="password" id="contraseña" placeholder="Contraseña">
-                </label>
-                <a href="#">¿Has olvidado la contraseña?</a>
-                <label><input type="button" value="Iniciar Sesión" id="btn-login"></label>
-                <p style="color: black; padding-bottom: 0.5rem;">¿No tienes una cuenta?</p>
-                <a href="../login-registro/registro-cliente.html">Registrarse como Usuario</a>
-                <a href="../login-registro/registro-empresa.html">Registrarse como Empresa</a>
-        </section>
-    </section>
 
     <footer>
         <section class="footer-content">
@@ -118,8 +110,6 @@
             </section>
         </section>
     </footer>
-
-    <script src="../../js/jquery-3.7.0.min.js"></script>
-    <script src="../../js/login-cliente.js"></script>
+    
 </body>
 </html>

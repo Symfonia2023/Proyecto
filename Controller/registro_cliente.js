@@ -18,6 +18,7 @@ function main() {
     let apartamento = $("#apartamento").val();
 
     let nuevoCliente = new Cliente(nombre, apellido, email, contraseña, telefono, cedula, calle, nro_puerta, esquina, barrio, bloque, apartamento)
+    
     let validarDatosJS = validarDatos(nuevoCliente)
 
     if (validarDatosJS.length === 0) {
@@ -25,6 +26,7 @@ function main() {
     } else {
         mostrarErrores(validarDatosJS);
     }
+    
 }
 
 
@@ -46,7 +48,7 @@ function validarDatos(nuevoCliente) {
     if (validarTelefono(nuevoCliente.telefono)) {
         formulariosIncorrectos.push("telefono");
     }
-    if (validarNombre(nuevoCliente.cedula)) {
+    if (validarCedula(nuevoCliente.cedula)) {
         formulariosIncorrectos.push("cedula");
     }
     if (validarCalle(nuevoCliente.calle)) {
@@ -74,7 +76,7 @@ function validarDatos(nuevoCliente) {
 
 function validarDatosAJAX(nuevoCliente) {
     $.ajax({
-        url: '../../../logica/validarDatos_ClienteWeb.php',
+        url: '../../../Model/validarDatos_ClienteWeb.php',
         type: 'POST', 
         data: JSON.stringify(nuevoCliente), // Convierte el objeto a JSON
         contentType: 'application/json', // Indica que el contenido es JSON
@@ -86,8 +88,8 @@ function validarDatosAJAX(nuevoCliente) {
                 mostrarErrores(response);
             }
             if (response == 0) {
-                console.log("Redireccionando");
-                window.location.href = "../login-registro/login.html";
+                alert("Redireccionando");
+                window.location.href = "../../../View/html/login-registro/login.html";
             }
         }, 
         error: function(error) {
@@ -228,30 +230,3 @@ function validarBloque(bloque) {
     }
 }
 
-function validarRUT(RUT) {
-    if (RUT.length !== 12 || !/^[0-9]+$/.test(RUT) || RUT == 0) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function validarNombreJuridico(nombre_juridico) {
-    nombre_juridico = nombre_juridico.trim(); // Eliminar espacios al principio y al final
-    nombre_juridico = nombre_juridico.replace(/\s+/g, ' '); // Reemplazar múltiples espacios por uno solo
-    if (nombre_juridico.length > 30 || !/^[a-zA-Z0-9\s]+$/.test(nombre_juridico)) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function validarLogin(login) {
-    login = login.trim(); // Eliminar espacios al principio y al final
-    login = login.replace(/\s+/g, ' '); // Reemplazar múltiples espacios por uno solo
-    if (login.length > 30 || !/^[a-zA-Z0-9\s]+$/.test(login)) {
-        return true;
-    } else {
-        return false;
-    }
-}
