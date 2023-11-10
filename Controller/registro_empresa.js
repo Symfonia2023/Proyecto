@@ -84,7 +84,7 @@ function validarDatosAJAX(nuevoCliente) {
             }
             if (response == 0) {
                 console.log("Redireccionando");
-                window.location.href = "../login-registro/login.html";
+                window.location.href = "../login-registro/login.php";
             }
         }, 
         error: function(error) {

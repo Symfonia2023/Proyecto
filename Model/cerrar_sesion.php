@@ -5,6 +5,6 @@ session_unset();
 // Destruir la sesión
 session_destroy();
 // Redirigir al usuario a otra página
-header("Location: ../View/html/login-registro/login.html");
+header("Location: ../View/html/login-registro/login.php");
 exit();
 ?>

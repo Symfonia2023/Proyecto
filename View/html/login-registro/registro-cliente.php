@@ -46,7 +46,7 @@
                             // Mostrar elementos cuando la sesión está establecida
                         ?>
                             <ul class="dropdown-content">
-                                <li class="dropdown-content-item" id="cerrarSesion"><a href="Model/cerrar_sesion.php">Cerrar Sesión</a></li>
+                                <li class="dropdown-content-item" id="cerrarSesion"><a href="../../../Model/cerrar_sesion.php">Cerrar Sesión</a></li>
                             </ul>
                         <?php
                         } else {

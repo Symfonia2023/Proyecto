@@ -40,7 +40,7 @@
                             // Mostrar elementos cuando la sesión está establecida
                         ?>
                             <ul class="dropdown-content">
-                                <li class="dropdown-content-item" id="cerrarSesion"><a href="Model/cerrar_sesion.php">Cerrar Sesión</a></li>
+                                <li class="dropdown-content-item" id="cerrarSesion"><a href="../../Model/cerrar_sesion.php">Cerrar Sesión</a></li>
                             </ul>
                         <?php
                         } else {
@@ -48,9 +48,9 @@
                             // Mostrar elementos cuando la sesión no está establecida
                         ?>
                             <ul class="dropdown-content">
-                                <li class="dropdown-content-item" id="login"><a href="view/html/login-registro/login.php">Login</a></li>
-                                <li class="dropdown-content-item" id="registroCliente"><a href="view/html/login-registro/registro-cliente.php">Registro Cliente</a></li>
-                                <li class="dropdown-content-item" id="registroEmpresa"><a href="view/html/login-registro/registro-empresa.php">Registro Empresa</a></li>
+                                <li class="dropdown-content-item" id="login"><a href="login-registro/login.php">Login</a></li>
+                                <li class="dropdown-content-item" id="registroCliente"><a href="login-registro/registro-cliente.php">Registro Cliente</a></li>
+                                <li class="dropdown-content-item" id="registroEmpresa"><a href="login-registro/registro-empresa.php">Registro Empresa</a></li>
                             </ul>
                         <?php
                         }

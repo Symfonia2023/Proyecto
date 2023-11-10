@@ -136,7 +136,7 @@
     </footer>
 
 
-    <script src="/Controller/jquery-3.7.0.min.js"></script>
+    <script src="Controller/jquery-3.7.0.min.js"></script>
     <script src="View/js/index.js"></script>
 </body>
 </html>

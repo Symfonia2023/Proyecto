@@ -2,8 +2,11 @@ $("#btn-login").click(main)
 
 
 function main() {
-    let login = $("#login").val();
+    let login = $("#loginInput").val();
     let contrasenia = $("#contraseña").val();
+
+    alert(login)
+    alert(contrasenia)
 
     let data = {
         login: login,

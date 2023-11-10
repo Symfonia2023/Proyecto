@@ -1,6 +1,0 @@
-$("#").click(main)
-
-
-function main() {
-    
-}

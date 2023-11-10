@@ -8,11 +8,13 @@
     <title>Registro Empresa</title>
 </head>
 <body>
+
     <?php
     session_start();
     session_unset();
     session_destroy();
     ?>
+    
     <nav>
         <ul>
             <li class="nav-logo"><img src="../../resources/logo_web.svg" width="200px"><p class="nombre-logo">SISVIANSA</p></li>
@@ -44,7 +46,7 @@
                             // Mostrar elementos cuando la sesión está establecida
                         ?>
                             <ul class="dropdown-content">
-                                <li class="dropdown-content-item" id="cerrarSesion"><a href="Model/cerrar_sesion.php">Cerrar Sesión</a></li>
+                                <li class="dropdown-content-item" id="cerrarSesion"><a href="../../../Model/cerrar_sesion.php">Cerrar Sesión</a></li>
                             </ul>
                         <?php
                         } else {

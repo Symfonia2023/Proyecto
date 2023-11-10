@@ -89,7 +89,7 @@ function validarDatosAJAX(nuevoCliente) {
             }
             if (response == 0) {
                 alert("Redireccionando");
-                window.location.href = "../../../View/html/login-registro/login.html";
+                window.location.href = "../../../View/html/login-registro/login.php";
             }
         }, 
         error: function(error) {

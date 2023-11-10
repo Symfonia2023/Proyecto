@@ -45,7 +45,7 @@
                             // Mostrar elementos cuando la sesión está establecida
                         ?>
                             <ul class="dropdown-content">
-                                <li class="dropdown-content-item" id="cerrarSesion"><a href="Model/cerrar_sesion.php">Cerrar Sesión</a></li>
+                                <li class="dropdown-content-item" id="cerrarSesion"><a href="../../../Model/cerrar_sesion.php">Cerrar Sesión</a></li>
                             </ul>
                         <?php
                         } else {
@@ -81,15 +81,15 @@
             <h1>Iniciar Sesión</h1>
                 <label for="login">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#6FB85E" class="bi bi-upc" viewBox="0 0 16 16">
-                    <path d="M3 4.5a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-7zm3 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7z"/>
-                  </svg>
-                  <input type="text" id="login" placeholder="CI / ID">
+                        <path d="M3 4.5a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-7zm3 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7z"/>
+                    </svg>
+                <input type="text" id="loginInput" placeholder="Correo electrónico">
                 </label>
                 <label for="contraseña">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#6FB85E" class="bi bi-lock-fill" viewBox="0 0 16 16">
                         <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
-                      </svg>
-                    <input type="password" id="contraseña" placeholder="Contraseña">
+                    </svg>
+                <input type="password" id="contraseña" placeholder="Contraseña">
                 </label>
                 <a href="#">¿Has olvidado la contraseña?</a>
                 <label><input type="button" value="Iniciar Sesión" id="btn-login"></label>
