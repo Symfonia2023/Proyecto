@@ -6,8 +6,7 @@ class menu {
 // /////////////////////////
 // ATRIBUTOS
 // --------------------------------------------------------------
-    private static $idAutomatico=1; // Variable para asignar ID's automaticamente.
-    private $id_menu;  // Hacer una funcion que lo asigne la ID automaticamente.
+
     private $nombre_menu;
     private $precio;
     private $tipo_menu;
@@ -19,26 +18,12 @@ class menu {
 // /////////////////////////
 // CONSTRUCTOR
 // --------------------------------------------------------------
-    public function __construct($nombre_menu,$precio,$tipo_menu,$stock_minimo,$stock_maximo) { // No se le agrega el atributo de la clase "id_menu" como parametro porque se lo asignará automáticamente.
-
-    $this->id_menu = self::$idAutomatico; // Asignar la ID automáticamente.
-    self::$idAutomatico++; // Incrementar el contador de ID's.
-
-    $this->nombre_menu = $nombre_menu;
-    $this->precio = $precio;
-    $this->tipo_menu = $tipo_menu;
-    $this->stock_minimo = $stock_minimo;
-    $this->stock_maximo = $stock_maximo;
-    }
+    public function __construct() {}
 // --------------------------------------------------------------
 
 
 // /////////////////////////
 // GETTERS Y SETTERS de los atributos.
-// --------------------------------------------------------------
-    public function getIdMenu() {
-        return $this->id_menu;
-    }
 // --------------------------------------------------------------
     public function getNombreMenu() {
         return $this->nombre_menu;
@@ -89,9 +74,30 @@ class menu {
 // /////////////////////////
 // Funciones de la clase.
 // --------------------------------------------------------------
-    private function validarPrecio($precio) {
-        // No puede ser 0 ni menor a.
+    
+public function obtenerMenusPorTipoYDieta($tipo, $dieta) {
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "symfonia_bd";
+
+    $conn = mysqli_connect($servername, $username, $password, $database);
+
+    $tipoMenu = mysqli_real_escape_string($conn, $tipo);
+    $dietaMenu = mysqli_real_escape_string($conn, $dieta);
+
+    $query = "SELECT * FROM menu WHERE tipo_menu = '$tipoMenu' AND dieta_menu = '$dietaMenu'";
+    $result = mysqli_query($conn, $query);
+
+    $menus = [];
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        $menus[] = $row;
     }
+
+    return $menus;
+}
+
 // --------------------------------------------------------------
     private function validarTipoMenu($tipo_menu) {
         // Solo puede ser uno de los que ya están definidos; menú semanal, menú quincenal o menú mensual.

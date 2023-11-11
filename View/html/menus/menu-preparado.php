@@ -1,3 +1,28 @@
+<?php
+
+require_once '../../../Controller/obtenerMenus.php';
+// Función para mostrar los menús
+function mostrarMenus($menus, $tituloTipoMenu) {
+    echo "<h2 class='tituloTipoMenu'>$tituloTipoMenu</h2>";
+    echo "<section class='item-content'>";
+
+    foreach ($menus as $menu) {
+        echo "<section class='menu-container'>";
+        echo "<section class='fotoMenu'></section>";
+        echo "<section class='tituloMenu'>";
+        echo "<h2>{$menu['nombre_menu']}<br><h3>{$menu['tipo_menu']} | {$menu['dieta_menu']}</h3></h2>";
+        echo "</section>";
+        echo "<section class='botonesMenu'>";
+        echo "<button class='botonMenu'>Ver Comidas</button>";
+        echo "<button class='botonMenu'>Añadir al Carrito</button>";
+        echo "</section>";
+        echo "</section>";
+    }
+
+    echo "</section>";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -57,7 +82,7 @@
                     ?>
                 </li>
                 <li>
-                    <a href="../carrito.php" style="padding: 0.5rem;">
+                    <a href="../carrito.php">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
                             <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
                             </svg>
@@ -67,311 +92,36 @@
         </ul>
     </nav>
 
-    <!-- Menus semanales -->
     <section id="section-menu-semanal">
         <h1 id="menu-semanal-title">Menús Semanales</h1>
         <section class="sectionMenu-content">
-            <!-- Menus Estandares -->
-            <h2 class="tituloTipoMenu">Menús Estándar</h2>
-            <section class="item-content">
-                <section class="menu-container">
-                    <section class="fotoMenu"></section>
-                    <section class="tituloMenu">
-                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
-                    </section>
-                    <section class="botonesMenu">
-                        <button class="botonMenu">Ver Comidas</button>
-                        <button class="botonMenu">Añadir al Carrito</button>
-                    </section>
-                </section>
-                <section class="menu-container">
-                    <section class="fotoMenu"></section>
-                    <section class="tituloMenu">
-                        <h2>Vianda Vegetariana Tradicional<br><h3>Semanal | Menú sin Gluten</h3></h2>
-                    </section>
-                    <section class="botonesMenu">
-                        <button class="botonMenu">Ver Comidas</button>
-                        <button class="botonMenu">Añadir al Carrito</button>
-                    </section>
-                </section>
-            </section>
-
-            <!-- Menús Vegetarianos -->
-            <h2 class="tituloTipoMenu">Menús Vegetarianos</h2>
-            <section class="item-content">
-                <section class="menu-container">
-                    <section class="fotoMenu"></section>
-                    <section class="tituloMenu">
-                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
-                    </section>
-                    <section class="botonesMenu">
-                        <button class="botonMenu">Ver Comidas</button>
-                        <button class="botonMenu">Añadir al Carrito</button>
-                    </section>
-                </section>
-            </section>
-
-            <!-- Menús Veganos -->
-            <h2 class="tituloTipoMenu">Menús Veganos</h2>
-            <section class="item-content">
-                <section class="menu-container">
-                    <section class="fotoMenu"></section>
-                    <section class="tituloMenu">
-                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
-                    </section>
-                    <section class="botonesMenu">
-                        <button class="botonMenu">Ver Comidas</button>
-                        <button class="botonMenu">Añadir al Carrito</button>
-                    </section>
-                </section>
-            </section>
-
-            <!-- Menús Celíacos -->
-            <h2 class="tituloTipoMenu">Menús Celíacos</h2>
-            <section class="item-content">
-                <section class="menu-container">
-                    <section class="fotoMenu"></section>
-                    <section class="tituloMenu">
-                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
-                    </section>
-                    <section class="botonesMenu">
-                        <button class="botonMenu">Ver Comidas</button>
-                        <button class="botonMenu">Añadir al Carrito</button>
-                    </section>
-                </section>
-                <section class="menu-container">
-                    <section class="fotoMenu"></section>
-                    <section class="tituloMenu">
-                        <h2>Vianda Vegetariana Tradicional<br><h3>Semanal | Menú sin Gluten</h3></h2>
-                    </section>
-                    <section class="botonesMenu">
-                        <button class="botonMenu">Ver Comidas</button>
-                        <button class="botonMenu">Añadir al Carrito</button>
-                    </section>
-                </section>
-            </section>
-
-            <!-- Menús Ovolacteovegetarianos -->
-            <h2 class="tituloTipoMenu">Menús Ovolacteovegetarianos</h2>
-            <section class="item-content">
-                <section class="menu-container">
-                    <section class="fotoMenu"></section>
-                    <section class="tituloMenu">
-                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
-                    </section>
-                    <section class="botonesMenu">
-                        <button class="botonMenu">Ver Comidas</button>
-                        <button class="botonMenu">Añadir al Carrito</button>
-                    </section>
-                </section>
-            </section>
-
+            <?php mostrarMenus($menusSemanalEstandares, "Menús Estándar"); ?>
+            <?php mostrarMenus($menusSemanalVegetarianos, "Menús Vegetarianos"); ?>
+            <?php mostrarMenus($menusSemanalVeganos, "Menús Veganos"); ?>
+            <?php mostrarMenus($menusSemanalCeliacos, "Menús Celíacos"); ?>
+            <?php mostrarMenus($menusSemanalOvolactovegetarianos, "Menús Ovolactovegetarianos"); ?>
         </section>
     </section>
 
-
-
-    <!-- Menus semanales -->
     <section id="section-menu-quincenal">
         <h1 id="menu-quincenal-title">Menús Quincenales</h1>
-    <section class="sectionMenu-content">
-
-        <!-- Menus Estandares -->
-        <h2 class="tituloTipoMenu">Menús Estándar</h2>
-        <section class="item-content">
-                <section class="menu-container">
-                    <section class="fotoMenu"></section>
-                    <section class="tituloMenu">
-                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
-                    </section>
-                    <section class="botonesMenu">
-                        <button class="botonMenu">Ver Comidas</button>
-                        <button class="botonMenu">Añadir al Carrito</button>
-                    </section>
-                </section>
-                <section class="menu-container">
-                    <section class="fotoMenu"></section>
-                    <section class="tituloMenu">
-                        <h2>Vianda Vegetariana Tradicional<br><h3>Semanal | Menú sin Gluten</h3></h2>
-                    </section>
-                    <section class="botonesMenu">
-                        <button class="botonMenu">Ver Comidas</button>
-                        <button class="botonMenu">Añadir al Carrito</button>
-                    </section>
-                </section>
-            </section>
-
-            <!-- Menús Vegetarianos -->
-            <h2 class="tituloTipoMenu">Menús Vegetarianos</h2>
-            <section class="item-content">
-                <section class="menu-container">
-                    <section class="fotoMenu"></section>
-                    <section class="tituloMenu">
-                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
-                    </section>
-                    <section class="botonesMenu">
-                        <button class="botonMenu">Ver Comidas</button>
-                        <button class="botonMenu">Añadir al Carrito</button>
-                    </section>
-                </section>
-            </section>
-
-            <!-- Menús Veganos -->
-            <h2 class="tituloTipoMenu">Menús Veganos</h2>
-            <section class="item-content">
-                <section class="menu-container">
-                    <section class="fotoMenu"></section>
-                    <section class="tituloMenu">
-                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
-                    </section>
-                    <section class="botonesMenu">
-                        <button class="botonMenu">Ver Comidas</button>
-                        <button class="botonMenu">Añadir al Carrito</button>
-                    </section>
-                </section>
-            </section>
-
-            <!-- Menús Celíacos -->
-            <h2 class="tituloTipoMenu">Menús Celíacos</h2>
-            <section class="item-content">
-                <section class="menu-container">
-                    <section class="fotoMenu"></section>
-                    <section class="tituloMenu">
-                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
-                    </section>
-                    <section class="botonesMenu">
-                        <button class="botonMenu">Ver Comidas</button>
-                        <button class="botonMenu">Añadir al Carrito</button>
-                    </section>
-                </section>
-                <section class="menu-container">
-                    <section class="fotoMenu"></section>
-                    <section class="tituloMenu">
-                        <h2>Vianda Vegetariana Tradicional<br><h3>Semanal | Menú sin Gluten</h3></h2>
-                    </section>
-                    <section class="botonesMenu">
-                        <button class="botonMenu">Ver Comidas</button>
-                        <button class="botonMenu">Añadir al Carrito</button>
-                    </section>
-                </section>
-            </section>
-
-            <!-- Menús Ovolacteovegetarianos -->
-            <h2 class="tituloTipoMenu">Menús Ovolacteovegetarianos</h2>
-            <section class="item-content">
-                <section class="menu-container">
-                    <section class="fotoMenu"></section>
-                    <section class="tituloMenu">
-                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
-                    </section>
-                    <section class="botonesMenu">
-                        <button class="botonMenu">Ver Comidas</button>
-                        <button class="botonMenu">Añadir al Carrito</button>
-                    </section>
-                </section>
-            </section>
-        
+        <section class="sectionMenu-content">
+            <?php mostrarMenus($menusQuincenalEstandares, "Menús Estándar"); ?>
+            <?php mostrarMenus($menusQuincenalVegetarianos, "Menús Vegetarianos"); ?>
+            <?php mostrarMenus($menusQuincenalVeganos, "Menús Veganos"); ?>
+            <?php mostrarMenus($menusQuincenalCeliacos, "Menús Celíacos"); ?>
+            <?php mostrarMenus($menusQuincenalOvolactovegetarianos, "Menús Ovolactovegetarianos"); ?>
+        </section>
     </section>
-</section>
 
-<!-- Menus Mensuales -->
-<section id="section-menu-mensual">
-    <h1 id="menu-mensual-title">Menús Mensuales</h1>
-    <section class="sectionMenu-content">
-    <!-- Menus Estandares -->
-    <h2 class="tituloTipoMenu">Menús Estándar</h2>
-    <section class="item-content">
-                <section class="menu-container">
-                    <section class="fotoMenu"></section>
-                    <section class="tituloMenu">
-                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
-                    </section>
-                    <section class="botonesMenu">
-                        <button class="botonMenu">Ver Comidas</button>
-                        <button class="botonMenu">Añadir al Carrito</button>
-                    </section>
-                </section>
-                <section class="menu-container">
-                    <section class="fotoMenu"></section>
-                    <section class="tituloMenu">
-                        <h2>Vianda Vegetariana Tradicional<br><h3>Semanal | Menú sin Gluten</h3></h2>
-                    </section>
-                    <section class="botonesMenu">
-                        <button class="botonMenu">Ver Comidas</button>
-                        <button class="botonMenu">Añadir al Carrito</button>
-                    </section>
-                </section>
-            </section>
-
-            <!-- Menús Vegetarianos -->
-            <h2 class="tituloTipoMenu">Menús Vegetarianos</h2>
-            <section class="item-content">
-                <section class="menu-container">
-                    <section class="fotoMenu"></section>
-                    <section class="tituloMenu">
-                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
-                    </section>
-                    <section class="botonesMenu">
-                        <button class="botonMenu">Ver Comidas</button>
-                        <button class="botonMenu">Añadir al Carrito</button>
-                    </section>
-                </section>
-            </section>
-
-            <!-- Menús Veganos -->
-            <h2 class="tituloTipoMenu">Menús Veganos</h2>
-            <section class="item-content">
-                <section class="menu-container">
-                    <section class="fotoMenu"></section>
-                    <section class="tituloMenu">
-                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
-                    </section>
-                    <section class="botonesMenu">
-                        <button class="botonMenu">Ver Comidas</button>
-                        <button class="botonMenu">Añadir al Carrito</button>
-                    </section>
-                </section>
-            </section>
-
-            <!-- Menús Celíacos -->
-            <h2 class="tituloTipoMenu">Menús Celíacos</h2>
-            <section class="item-content">
-                <section class="menu-container">
-                    <section class="fotoMenu"></section>
-                    <section class="tituloMenu">
-                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
-                    </section>
-                    <section class="botonesMenu">
-                        <button class="botonMenu">Ver Comidas</button>
-                        <button class="botonMenu">Añadir al Carrito</button>
-                    </section>
-                </section>
-                <section class="menu-container">
-                    <section class="fotoMenu"></section>
-                    <section class="tituloMenu">
-                        <h2>Vianda Vegetariana Tradicional<br><h3>Semanal | Menú sin Gluten</h3></h2>
-                    </section>
-                    <section class="botonesMenu">
-                        <button class="botonMenu">Ver Comidas</button>
-                        <button class="botonMenu">Añadir al Carrito</button>
-                    </section>
-                </section>
-            </section>
-
-            <!-- Menús Ovolacteovegetarianos -->
-            <h2 class="tituloTipoMenu">Menús Ovolacteovegetarianos</h2>
-            <section class="item-content">
-                <section class="menu-container">
-                    <section class="fotoMenu"></section>
-                    <section class="tituloMenu">
-                        <h2>VeggieCombo super<br><h3>Semanal | Menú Vegano</h3></h2>
-                    </section>
-                    <section class="botonesMenu">
-                        <button class="botonMenu">Ver Comidas</button>
-                        <button class="botonMenu">Añadir al Carrito</button>
-                    </section>
-                </section>
-            </section>
+    <section id="section-menu-mensual">
+        <h1 id="menu-mensual-title">Menús Mensuales</h1>
+        <section class="sectionMenu-content">
+            <?php mostrarMenus($menusMensualEstandares, "Menús Estándar"); ?>
+            <?php mostrarMenus($menusMensualVegetarianos, "Menús Vegetarianos"); ?>
+            <?php mostrarMenus($menusMensualVeganos, "Menús Veganos"); ?>
+            <?php mostrarMenus($menusMensualCeliacos, "Menús Celíacos"); ?>
+            <?php mostrarMenus($menusMensualOvolactovegetarianos, "Menús Ovolactovegetarianos"); ?>
         </section>
     </section>
 
