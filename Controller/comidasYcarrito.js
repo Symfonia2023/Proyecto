@@ -19,7 +19,7 @@ function agregarAlCarrito(idMenu, nombreMenu, precioMenu) {
 
         success: function(response) {
             if (response === "true") {
-                alert("Menú agregado al carrito exitosamente");
+                $("#mensajeEmergente").fadeIn().delay(2000).fadeOut();
             } else {
                 alert("Error al agregar el menú al carrito");
             }

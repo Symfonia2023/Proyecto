@@ -68,7 +68,9 @@
     </nav>
 
 
-
+    <div id="mensajeEmergente" style="display: none;" class="mensaje-emergente">
+        Menú eliminado
+    </div>
 
 <section class="carrito-container">
     <section class="carrito-section">
@@ -83,7 +85,7 @@
                 echo '<section class="menu-nombre">' . $menu['nombre'] . '</section>';
                 echo '<section class="menu-cantidad">x' . $menu['cantidad'] . '</section>';
                 echo '<section class="menu-precio">$' . $menu['precio'] . '</section>';
-                echo '<section class="menu-btnEliminar"><button onclick="eliminarMenu(' . $menu['id'] . ')">Eliminar</button></section>';
+                echo '<section class="menu-btnEliminar"><button onclick="eliminarMenu(' . $menu['id'] . ',' . $menu['cantidad'] . ')">Eliminar</button></section>';
                 echo '</section>';
             }
         } else {
@@ -139,5 +141,8 @@
         </section>
     </footer>
     
+
+    <script src="../../Controller/jquery-3.7.0.min.js"></script>
+    <script src="../../Controller/carrito.js"></script>
 </body>
 </html>

@@ -100,6 +100,19 @@ li a:hover {
 
 /* ACA EMPIEZA LA SECCION DE MOSTRAR CARRITO */
 
+.mensaje-emergente {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    display: inline-block;
+    z-index: 9999; /* Para que aparezca arriba del todo */
+}
+
 .carrito-container {
     
     width: 100%;
@@ -178,6 +191,7 @@ footer {
     padding: 2rem 0;
     bottom: 0;
     width: 100%;
+    position:relative;
     border-top: 4px solid #6FB85E;
 }
 
@@ -274,3 +288,4 @@ footer {
         border-bottom: 2px solid #6FB85E;
     }
 }
+

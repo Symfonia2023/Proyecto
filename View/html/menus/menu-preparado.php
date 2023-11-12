@@ -92,6 +92,10 @@ function mostrarMenus($menus, $tituloTipoMenu) {
         </ul>
     </nav>
 
+    <div id="mensajeEmergente" style="display: none;" class="mensaje-emergente">
+        Menú agregado con éxito
+    </div>
+
     <section id="section-menu-semanal">
         <h1 id="menu-semanal-title">Menús Semanales</h1>
         <section class="sectionMenu-content">

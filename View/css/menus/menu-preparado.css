@@ -166,6 +166,19 @@ li a:hover {
     background-repeat: no-repeat; /* Evita que la imagen se repita */
 }
 
+.mensaje-emergente {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    display: inline-block;
+    z-index: 9999; /* Para que aparezca arriba del todo */
+}
+
 .tituloMenu {
     height: 30%;
     justify-content: center;
