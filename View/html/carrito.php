@@ -67,6 +67,34 @@
         </ul>
     </nav>
 
+
+
+
+<section class="carrito-container">
+    <section class="carrito-section">
+        <?php
+
+        // Verifica si la variable de sesión 'carrito' está definida
+        if (isset($_SESSION['carrito']) && !empty($_SESSION['carrito'])) {
+            // Itera sobre los menús en el carrito
+            foreach ($_SESSION['carrito'] as $menu) {
+                echo '<section class="menu-carrito">';
+                echo '<section class="menu-icon"><img src="../resources/logo_web.svg" width="100px"></section>';
+                echo '<section class="menu-nombre">' . $menu['nombre'] . '</section>';
+                echo '<section class="menu-cantidad">x' . $menu['cantidad'] . '</section>';
+                echo '<section class="menu-precio">$' . $menu['precio'] . '</section>';
+                echo '<section class="menu-btnEliminar"><button onclick="eliminarMenu(' . $menu['id'] . ')">Eliminar</button></section>';
+                echo '</section>';
+            }
+        } else {
+            echo '<p>El carrito está vacío.</p>';
+        }
+        ?>
+    </section>
+</section>
+
+
+
     <footer>
         <section class="footer-content">
             <section class="footer-item">

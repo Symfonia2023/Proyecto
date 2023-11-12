@@ -30,7 +30,7 @@ function main() {
 function validarDatos(nuevoCliente) {
     let formulariosIncorrectos = [];
 
-    if (validarNombre(nuevoCliente.nombreEmpresa)) {
+    if (validarNombreJuridico(nuevoCliente.nombreEmpresa)) {
         formulariosIncorrectos.push("nombre-empresa");
     }
     if (validarRUT(nuevoCliente.RUT)) {
@@ -71,7 +71,7 @@ function validarDatos(nuevoCliente) {
 
 function validarDatosAJAX(nuevoCliente) {
     $.ajax({
-        url: '../../../logica/validarDatos_ClienteEmpresa.php',
+        url: '../../../Model/validarDatos_ClienteEmpresa.php',
         type: 'POST', 
         data: JSON.stringify(nuevoCliente), // Convierte el objeto a JSON
         contentType: 'application/json', // Indica que el contenido es JSON
@@ -84,7 +84,7 @@ function validarDatosAJAX(nuevoCliente) {
             }
             if (response == 0) {
                 console.log("Redireccionando");
-                window.location.href = "../login-registro/login.php";
+                window.location.href = "../../../View/html/login-registro/login.php";
             }
         }, 
         error: function(error) {
@@ -117,26 +117,6 @@ function restablecerColores() {
 }
 
 
-function validarNombre(nombre) {
-    nombre = nombre.trim(); // Eliminar espacios al principio y al final
-    nombre = nombre.replace(/\s+/g, ' '); // Reemplazar múltiples espacios por uno solo
-    if (nombre.length > 20 || !/^[a-zA-Z0-9\s]+$/.test(nombre)) {
-        return true; // Nombre inválido
-    } else {
-        return false; // Nombre válido
-    }
-}
-
-function validarApellido(apellido) {
-    apellido = apellido.trim(); // Eliminar espacios al principio y al final
-    apellido = apellido.replace(/\s+/g, ' '); // Reemplazar múltiples espacios por uno solo
-    if (apellido.length > 20 || !/^[a-zA-Z0-9\s]+$/.test(apellido)) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
 function validarEmail(email) {
     email = email.trim(); // Eliminar espacios al principio y al final
     email = email.replace(/\s+/g, ''); // Reemplazar múltiples espacios por uno solo
@@ -167,14 +147,6 @@ function validarBarrio(barrio) {
     barrio = barrio.trim(); // Eliminar espacios al principio y al final
     barrio = barrio.replace(/\s+/g, ' '); // Reemplazar múltiples espacios por uno solo
     if (barrio.length > 50 || !/^[a-zA-Z0-9\s]+$/.test(barrio)) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function validarCedula(cedula) {
-    if (cedula.length !== 8 || !/^[0-9]+$/.test(cedula)) {
         return true;
     } else {
         return false;
@@ -237,16 +209,6 @@ function validarNombreJuridico(nombre_juridico) {
     nombre_juridico = nombre_juridico.trim(); // Eliminar espacios al principio y al final
     nombre_juridico = nombre_juridico.replace(/\s+/g, ' '); // Reemplazar múltiples espacios por uno solo
     if (nombre_juridico.length > 30 || !/^[a-zA-Z0-9\s]+$/.test(nombre_juridico)) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function validarLogin(login) {
-    login = login.trim(); // Eliminar espacios al principio y al final
-    login = login.replace(/\s+/g, ' '); // Reemplazar múltiples espacios por uno solo
-    if (login.length > 30 || !/^[a-zA-Z0-9\s]+$/.test(login)) {
         return true;
     } else {
         return false;

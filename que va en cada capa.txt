@@ -1,3 +1,0 @@
-Presentacion - html, css y javascript
-logica - se definen las clases, esta capa es para procesar y manipular los datos recibidos de la capa de presentacion
-acceso a datos - se ocupa de la gestion de datos y su almacenamiento, es donde se hace la conexion con la base de datos, archivos, etc.

@@ -199,7 +199,7 @@
         </section>
     </footer>
 
-      <script src="../../js/jquery-3.7.0.min.js"></script>
-      <script src="../../js/registro_empresa.js" type="module"></script>
+    <script src="../../../Controller/jquery-3.7.0.min.js"></script>
+    <script src="../../../Controller/registro_empresa.js" type="module"></script>
 </body>
 </html>

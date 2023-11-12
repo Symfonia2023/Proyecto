@@ -13,8 +13,8 @@ function mostrarMenus($menus, $tituloTipoMenu) {
         echo "<h2>{$menu['nombre_menu']}<br><h3>{$menu['tipo_menu']} | {$menu['dieta_menu']}</h3></h2>";
         echo "</section>";
         echo "<section class='botonesMenu'>";
-        echo "<button class='botonMenu'>Ver Comidas</button>";
-        echo "<button class='botonMenu'>Añadir al Carrito</button>";
+        echo "<button class='botonMenu' onclick='verComidas({$menu['id_menu']})'>Ver Comidas</button>";
+        echo "<button class='botonMenu' onclick='agregarAlCarrito({$menu['id_menu']}, \"{$menu['nombre_menu']}\", {$menu['precio']})'>Añadir al Carrito</button>";
         echo "</section>";
         echo "</section>";
     }
@@ -172,6 +172,7 @@ function mostrarMenus($menus, $tituloTipoMenu) {
 
 
     <script src="../../../Controller/jquery-3.7.0.min.js"></script>
-    <script src="../../../Controller/menusPreparados.js"></script>
+    <script src="../../../Controller/comidasYcarrito.js"></script>
+    <script src="../../js/menusPreparados.js"></script>
 </body>
 </html>
