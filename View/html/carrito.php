@@ -87,6 +87,8 @@
                 echo '<section class="menu-precio">$' . $menu['precio'] . '</section>';
                 echo '<section class="menu-btnEliminar"><button onclick="eliminarMenu(' . $menu['id'] . ',' . $menu['cantidad'] . ')">Eliminar</button></section>';
                 echo '</section>';
+                ?>
+                <?php
             }
         } else {
             echo '<p>El carrito está vacío.</p>';
