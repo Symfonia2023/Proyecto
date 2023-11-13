@@ -99,33 +99,33 @@ function mostrarMenus($menus, $tituloTipoMenu) {
     <section id="section-menu-semanal">
         <h1 id="menu-semanal-title">Menús Semanales</h1>
         <section class="sectionMenu-content">
-            <?php mostrarMenus($menusSemanalEstandares, "Menús Estándar"); ?>
-            <?php mostrarMenus($menusSemanalVegetarianos, "Menús Vegetarianos"); ?>
-            <?php mostrarMenus($menusSemanalVeganos, "Menús Veganos"); ?>
-            <?php mostrarMenus($menusSemanalCeliacos, "Menús Celíacos"); ?>
-            <?php mostrarMenus($menusSemanalOvolactovegetarianos, "Menús Ovolactovegetarianos"); ?>
+            <?php mostrarMenus($menusSemanalEstandares, ""); ?>
+            <?php mostrarMenus($menusSemanalVegetarianos, ""); ?>
+            <?php mostrarMenus($menusSemanalVeganos, ""); ?>
+            <?php mostrarMenus($menusSemanalCeliacos, ""); ?>
+            <?php mostrarMenus($menusSemanalOvolactovegetarianos, ""); ?>
         </section>
     </section>
 
     <section id="section-menu-quincenal">
         <h1 id="menu-quincenal-title">Menús Quincenales</h1>
         <section class="sectionMenu-content">
-            <?php mostrarMenus($menusQuincenalEstandares, "Menús Estándar"); ?>
-            <?php mostrarMenus($menusQuincenalVegetarianos, "Menús Vegetarianos"); ?>
-            <?php mostrarMenus($menusQuincenalVeganos, "Menús Veganos"); ?>
-            <?php mostrarMenus($menusQuincenalCeliacos, "Menús Celíacos"); ?>
-            <?php mostrarMenus($menusQuincenalOvolactovegetarianos, "Menús Ovolactovegetarianos"); ?>
+            <?php mostrarMenus($menusQuincenalEstandares, ""); ?>
+            <?php mostrarMenus($menusQuincenalVegetarianos, ""); ?>
+            <?php mostrarMenus($menusQuincenalVeganos, ""); ?>
+            <?php mostrarMenus($menusQuincenalCeliacos, ""); ?>
+            <?php mostrarMenus($menusQuincenalOvolactovegetarianos, ""); ?>
         </section>
     </section>
 
     <section id="section-menu-mensual">
         <h1 id="menu-mensual-title">Menús Mensuales</h1>
         <section class="sectionMenu-content">
-            <?php mostrarMenus($menusMensualEstandares, "Menús Estándar"); ?>
-            <?php mostrarMenus($menusMensualVegetarianos, "Menús Vegetarianos"); ?>
-            <?php mostrarMenus($menusMensualVeganos, "Menús Veganos"); ?>
-            <?php mostrarMenus($menusMensualCeliacos, "Menús Celíacos"); ?>
-            <?php mostrarMenus($menusMensualOvolactovegetarianos, "Menús Ovolactovegetarianos"); ?>
+            <?php mostrarMenus($menusMensualEstandares, ""); ?>
+            <?php mostrarMenus($menusMensualVegetarianos, ""); ?>
+            <?php mostrarMenus($menusMensualVeganos, ""); ?>
+            <?php mostrarMenus($menusMensualCeliacos, ""); ?>
+            <?php mostrarMenus($menusMensualOvolactovegetarianos, ""); ?>
         </section>
     </section>
 

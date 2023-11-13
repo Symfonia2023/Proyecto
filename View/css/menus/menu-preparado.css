@@ -90,11 +90,10 @@ li a:hover {
     width: fit-content;
     height: fit-content;
     margin: auto; 
-    padding: 2rem 3rem 1rem 3rem;
+    padding: 1rem 10rem 1rem 10rem;
 }
 
-
-#section-menu-semanal h1, #section-menu-quincenal h1, #section-menu-mensual h1{
+#section-menu-semanal h1, #section-menu-quincenal h1, #section-menu-mensual h1 {
     border-bottom: 3px solid #6FB85E;
     font-size: 1rem;
     background-color: white;
@@ -103,54 +102,41 @@ li a:hover {
     justify-content: center;
     align-items: center;
     transition: 0.1s;
+    border: 2px solid #6FB85E;
+    
+
 }
 
-#section-menu-semanal h1:hover, #section-menu-quincenal h1:hover, #section-menu-mensual h1:hover{
+#section-menu-semanal h1:hover, #section-menu-quincenal h1:hover, #section-menu-mensual h1:hover {
     transform: scale(1.1);
     cursor: pointer;
 }
 
-
-#menu-semanal-title, #menu-quincenal-title, #menu-mensual-title{
+#menu-semanal-title, #menu-quincenal-title, #menu-mensual-title {
     padding: 3rem;
     font-size: 1.2rem;
     width: 10rem;
 }
 
-.tituloTipoMenu {
-    padding: 1rem;
-}
 
 .sectionMenu-content {
-    background: rgba(188, 188, 188, 0.2);
-    backdrop-filter: blur(41px); /* Efecto de desenfoque */
+    background: #E4E4E4;
     display: none;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap:wrap;
     justify-content: center;
-    width: 100%;
-    height: fit-content;
-    margin-right: 20px;
-}
-
-.item-content {
-    width: 100%;
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    /* grid-column-gap: 1rem; Añade el margen entre columnas aquí */
     align-items: center;
-    justify-content: center;
-    
+    gap: 1rem;
+    padding: 2rem; /* Añade espacio alrededor de los elementos en dispositivos más pequeños */
+    border: 1px solid black;
 }
 
 .menu-container {
     background-color: #E4E4E4;
     width: 15rem;
-    height: 30rem;
-    margin: 1rem 1rem 2rem 1rem;
+    height: 20rem;
     padding: 0.5rem;
     border: 2px solid #6FB85E;
-    box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box; /* Asegura que el padding y el borde no afecten el tamaño total */
 }
 
 .fotoMenu {
@@ -161,10 +147,22 @@ li a:hover {
     flex-direction: column;
     width: 100%;
     background: url(../../resources/icono_menu.png);
-    background-size: contain; /* Ajusta el tamaño para que la imagen quepa en la sección */
-    background-position: center; /* Centra la imagen vertical y horizontalmente */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
+@media screen and (max-width: 600px) {
+    #section-menu-semanal, #section-menu-quincenal, #section-menu-mensual {
+        padding: 1rem;
+    }
+
+    .sectionMenu-content {
+        justify-content: center; /* Ajustado para centrar los elementos en dispositivos más pequeños */
+    }
+}
+
+
 
 .mensaje-emergente {
     position: fixed;
@@ -186,8 +184,6 @@ li a:hover {
     display: flex;
     flex-direction: column;
     width: 100%;
-    border-top: 1.5px solid black; /* Borde superior de 3 píxeles de ancho */
-    border-bottom: 1.5px solid black; /* Borde inferior de 3 píxeles de ancho */
 }
 
 .botonesMenu {
