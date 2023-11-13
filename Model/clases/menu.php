@@ -98,6 +98,39 @@ public function obtenerMenusPorTipoYDieta($tipo, $dieta) {
     return $menus;
 }
 
+public function obtenerNombresComidasMenu($idMenu) {
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "symfonia_bd";
+
+    $conn = mysqli_connect($servername, $username, $password, $database);
+
+    // Obtener IDs de las comidas asociadas al menú
+    $query = "SELECT id_comida FROM compone WHERE id_menu = $idMenu";
+    $result = mysqli_query($conn, $query);
+
+    $nombresComidas = [];
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        $idComida = $row['id_comida'];
+
+        // Obtener nombre de la comida utilizando el ID obtenido
+        $queryNombre = "SELECT nombre_comida FROM comida WHERE id_comida = $idComida";
+        $resultNombre = mysqli_query($conn, $queryNombre);
+
+        while ($rowNombre = mysqli_fetch_assoc($resultNombre)) {
+            $nombresComidas[] = $rowNombre['nombre_comida'];
+        }
+    }
+
+    mysqli_close($conn);
+
+    return $nombresComidas;
+}
+
+
+
 // --------------------------------------------------------------
     private function validarTipoMenu($tipo_menu) {
         // Solo puede ser uno de los que ya están definidos; menú semanal, menú quincenal o menú mensual.

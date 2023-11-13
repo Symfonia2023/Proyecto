@@ -1,12 +1,11 @@
 <?php
 session_start();
 
-// Verifica si la variable de sesión 'carrito' está definida y, si no, inicialízala
+// Verifica si la variable de sesión 'carrito' está definida y, si no, se inicializa.
 if (!isset($_SESSION['carrito'])) {
     $_SESSION['carrito'] = [];
 }
 
-// Decodifica los datos JSON recibidos desde la solicitud AJAX
 $data = json_decode(file_get_contents("php://input"), true);
 
 // Verifica si los datos del menú son válidos

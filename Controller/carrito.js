@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    // Verifica si se debe mostrar el mensaje después de recargar la página
+    // Verifica si se debe mostrar el mensaje después de recargar la página con una cookie
     var mostrarMensajeDespuesRecarga = getCookie("mostrarMensajeDespuesRecarga");
     if (mostrarMensajeDespuesRecarga === "true") {
         mostrarMensajeEliminar();

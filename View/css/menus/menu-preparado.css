@@ -177,6 +177,55 @@ li a:hover {
     z-index: 9999; /* Para que aparezca arriba del todo */
 }
 
+.ventanaComidas-emergente {
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    z-index: 9999; /* Para que aparezca arriba del todo */
+    height: fit-content;
+    width: 300px;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 0.5px solid black;
+}
+.ventanaComidas-emergente header {
+    font-size: xx-large;
+    border-bottom: 4px solid rgb(74, 189, 70);
+    width: 75%;
+    height: 100%;
+}
+.comidas {
+    margin-top: 2rem;
+    justify-content: left;
+    display: grid;
+    grid-template-columns: 100%;
+    align-items: center;
+    text-align: left;
+    height: fit-content;
+    width: 100%;
+
+}
+#cerrarVentana {
+    background: none;
+    border: none;
+    font-size: x-small;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+
+
 .tituloMenu {
     height: 30%;
     justify-content: center;

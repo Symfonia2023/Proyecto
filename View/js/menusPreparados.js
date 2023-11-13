@@ -1,3 +1,11 @@
+$(document).ready(function() {
+    $("#cerrarVentana").click(cerrarVentana);
+    
+    function cerrarVentana() {
+        $(".ventanaComidas-emergente").hide();
+    }
+});
+
 $("#menu-semanal-title").click(function() {
     toggleContenido("semanal");
 });
@@ -22,3 +30,4 @@ function toggleContenido(tipo) {
         });
     }
 }
+
