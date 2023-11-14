@@ -40,3 +40,27 @@ function getCookie(name) {
     }
     return null;
 }
+
+
+function finalizarCompra(total) {
+    $.ajax({
+        url: '../../Model/finalizarCompra.php',
+        type: 'POST',
+        data: JSON.stringify({ total: total }),
+        success: function(response) {
+            console.log(response)
+            if (response == 0) {
+                alert("SESSION")
+            } else {
+                $("#errorSession").fadeIn().delay(5000).fadeOut();
+            }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log("Error en la llamada AJAX:", textStatus, errorThrown);
+        }
+    });
+}
+
+function mensajeErrorSession() {
+
+}

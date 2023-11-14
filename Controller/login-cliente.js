@@ -5,9 +5,6 @@ function main() {
     let login = $("#loginInput").val();
     let contrasenia = $("#contraseña").val();
 
-    alert(login)
-    alert(contrasenia)
-
     let data = {
         login: login,
         contrasenia: contrasenia

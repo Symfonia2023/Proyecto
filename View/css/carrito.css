@@ -113,6 +113,42 @@ li a:hover {
     z-index: 9999; /* Para que aparezca arriba del todo */
 }
 
+.ventanaSession-emergente {
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    z-index: 9999; /* Para que aparezca arriba del todo */
+    height: fit-content;
+    width: 300px;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+.ventanaSession-emergente header {
+    font-size: xx-large;
+    width: 75%;
+    height: 100%;
+    color: red;
+}
+.mensaje {
+    margin-top: 1rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: fit-content;
+    width: 100%;
+}
+
+
 .carrito-container {
     height: 100vh;
     margin-top: 2rem;
@@ -164,10 +200,13 @@ li a:hover {
     height: 40px;
     width: 50%;
 }
-
 .menu-btnEliminar:hover button{
-    transform: scale(1.1); /* Escala el botón al 110% del tamaño original en hover */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transform: scale(1.1);
+    cursor: pointer; 
+}
+.pagar {
+    margin-top: 5rem;
+    text-align: left;
 }
 /* ACA TERMINA LA SECCION DE MOSTRAR CARRITO */
 

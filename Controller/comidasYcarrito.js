@@ -7,7 +7,7 @@ function verComidas(idMenu) {
         contentType: 'application/json', // Indica que el contenido es JSON
 
         success: function(response) {
-           var comidas = JSON.parse(response);
+           let comidas = JSON.parse(response);
 
            // Limpia el contenido actual de la sección comidas
            $(".comidas").empty();

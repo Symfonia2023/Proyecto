@@ -68,34 +68,59 @@
     </nav>
 
 
-    <div id="mensajeEmergente" style="display: none;" class="mensaje-emergente">
+    <section id="mensajeEmergente" style="display: none;" class="mensaje-emergente">
         Menú eliminado
-    </div>
+    </section>
+    
+    <section id="errorSession" style="display: none;" class="ventanaSession-emergente">
+        <header>
+            ¡ERROR!
+        </header>
+        <section class="mensaje">Necesita iniciar sesión <br>para proceder con el pago</section>
+    </section>
 
-<section class="carrito-container">
+    <section class="carrito-container">
     <section class="carrito-section">
         <?php
 
         // Verifica si la variable de sesión 'carrito' está definida
         if (isset($_SESSION['carrito']) && !empty($_SESSION['carrito'])) {
             // Itera sobre los menús en el carrito
+            $total = 0;
+
             foreach ($_SESSION['carrito'] as $menu) {
                 echo '<section class="menu-carrito">';
                 echo '<section class="menu-icon"><img src="../resources/logo_web.svg" width="100px"></section>';
                 echo '<section class="menu-nombre">' . $menu['nombre'] . '</section>';
                 echo '<section class="menu-cantidad">x' . $menu['cantidad'] . '</section>';
-                echo '<section class="menu-precio">$' . $menu['precio'] . '</section>';
+                
+                // Aplica number_format al precio
+                $precioFormateado = number_format($menu['precio'], 0, '', '.');
+                echo '<section class="menu-precio">c/u $' . $precioFormateado . '</section>';
+                
                 echo '<section class="menu-btnEliminar"><button onclick="eliminarMenu(' . $menu['id'] . ',' . $menu['cantidad'] . ')">Eliminar</button></section>';
                 echo '</section>';
-                ?>
-                <?php
+
+                $total += $menu['precio'] * $menu['cantidad'];
             }
+            
+            // Aplica number_format al total
+            $totalFormateado = number_format($total, 0, '', '.');
+            
+            echo '<section class="menu-carrito" style="border: none">';
+            echo '<section class="menu-icon" style="border: none"></section>';
+            echo '<section class="menu-nombre" style="border: none"></section>';
+            echo '<section class="menu-cantidad" style="border: none"></section>';
+            echo '<section class="menu-precio" style="border: none">Total:<br>$' . $totalFormateado . '</section>';
+            echo '<section class="menu-btnEliminar" style="border: none"> <button id="btnFinalizarCompra" onclick="finalizarCompra('.$total.')">Finalizar compra</button></section>';
+            echo '</section>';
         } else {
             echo '<p>El carrito está vacío.</p>';
         }
         ?>
     </section>
 </section>
+
 
 
 
