@@ -69,25 +69,14 @@
     </nav>
 
     <section class="section-menu">
-
-        <p style="margin: 1rem 0 0 1.5rem;">MENÚS DESTACADOS</p>
-      
+        <p style="margin: 1rem 0 0 1.5rem;">Bienvenidos a Sisviansa</p>
     </section>
 
 
     <section class="section-info">
-        <section id="menu-personalizado">
-            <p style="text-align: center; padding: 1rem 0 1rem 0;">MENÚS PERSONALIZADOS</p>
-            <section class="input-container">
-                <input type="button" value="Crear Menú" class="btn-section" onclick="window.location.href='view/html/menus/menu-personalizado.php'" disabled>
-            </section>
-        </section>
-
         <section id="menu-estandar">
             <p style="text-align: center; padding: 1rem 0 1rem 0;">TU COMIDA LISTA SIN ESFUERZOS</p>
-            <p></p>
-            <p></p>
-            <p></p>
+            <button id="btnVerMenu" onclick="verMenus"> Ver menús </button>
         </section>
     </section>
     

@@ -62,7 +62,7 @@ function validarDatosLogin(data) {
                 window.location.href = "../../../index.php";
             } else if (response === 1) {
                 alert("Ingreso exitoso EMPLEADO");
-                window.location.href = "../../html/empleados/index-empleados.html";
+                window.location.href = "../../html/empleados/index-empleados.php";
             } else {
                 console.log(response);
                 mostrarErrores(response);

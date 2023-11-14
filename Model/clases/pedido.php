@@ -89,5 +89,9 @@ public function realizarPedido($idMenu, $idComidas, $nroCliente) {
     }
 }
 
+public function obtenerPedidos() {
+    
+}
+
 }
 ?>

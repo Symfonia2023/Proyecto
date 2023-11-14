@@ -88,6 +88,14 @@ li a:hover {
     height: 70vh;
     margin: 5% 20% 5% 20%;
     border-bottom: 4px solid #6FB85E;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: x-large;
+}
+.section-menu p{
+    border-bottom:2px solid #6FB85E;
+    border-top: 2px solid #6FB85E;
 }
 
 .section-info {
@@ -95,19 +103,36 @@ li a:hover {
     margin: 5% 20% 5% 20%;
 }
 
-#menu-personalizado {
-    background: #E4E4E4;
+#btnVerMenu{
+    background-color: #6FB85E;
+    color: #E4E4E4; 
+    border: none; 
+    padding: 1rem; 
+    transition: transform 0.2s;
     width: 50%;
-    margin: 0 2% 0 0;
+    height: 5rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.3);
+    font-size: xx-large;
+}
+
+#btnVerMenu:hover {
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 #menu-estandar {
+    border-radius: 10px;
     background: #E4E4E4;
-    width: 50%;
+    width: 100%;
     margin: 0 0 0 2%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
 }
 
-#menu-personalizado, #menu-estandar {
+#menu-estandar {
     border-bottom: 4px solid #6FB85E;
     display:block;
     justify-content: center;
