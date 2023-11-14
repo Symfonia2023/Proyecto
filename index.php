@@ -79,7 +79,7 @@
         <section id="menu-personalizado">
             <p style="text-align: center; padding: 1rem 0 1rem 0;">MENÚS PERSONALIZADOS</p>
             <section class="input-container">
-                <input type="button" value="Crear Menú" class="btn-section" onclick="window.location.href='view/html/menus/menu-personalizado.php'">
+                <input type="button" value="Crear Menú" class="btn-section" onclick="window.location.href='view/html/menus/menu-personalizado.php'" disabled>
             </section>
         </section>
 

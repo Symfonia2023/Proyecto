@@ -152,27 +152,14 @@ li a:hover {
     background-repeat: no-repeat;
 }
 
-@media screen and (max-width: 600px) {
-    #section-menu-semanal, #section-menu-quincenal, #section-menu-mensual {
-        padding: 1rem;
-    }
-
-    .sectionMenu-content {
-        justify-content: center; /* Ajustado para centrar los elementos en dispositivos más pequeños */
-    }
-}
-
-
-
 .mensaje-emergente {
     position: fixed;
-    top: 10px;
+    top: 0.2rem;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #4CAF50;
+    background-color: #6FB85E;
     color: white;
-    padding: 15px;
-    border-radius: 5px;
+    padding: 1rem;
     display: inline-block;
     z-index: 9999; /* Para que aparezca arriba del todo */
 }
@@ -183,26 +170,27 @@ li a:hover {
     left: 50%;
     transform: translateX(-50%);
     background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    padding: 15px;
-    border-radius: 5px;
+    color: #000;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     z-index: 9999; /* Para que aparezca arriba del todo */
     height: fit-content;
-    width: 300px;
+    width: 20rem;
     justify-items: center;
     align-items: center;
     justify-content: center;
     text-align: center;
-    border: 0.5px solid black;
+    border: 2px solid #6FB85E;
 }
+
 .ventanaComidas-emergente header {
-    font-size: xx-large;
-    border-bottom: 4px solid rgb(74, 189, 70);
+    font-size: 2rem;
+    border-bottom: 4px solid #6FB85E;
     width: 75%;
     height: 100%;
 }
+
 .comidas {
     margin-top: 2rem;
     justify-content: left;
@@ -214,17 +202,16 @@ li a:hover {
     width: 100%;
 
 }
+
 #cerrarVentana {
     background: none;
     border: none;
-    font-size: x-small;
+    font-size: 1em;
     cursor: pointer;
     position: absolute;
     top: 5px;
     right: 10px;
 }
-
-
 
 .tituloMenu {
     height: 30%;
@@ -367,5 +354,23 @@ footer {
         display: flex;
         flex-direction: column; /* Coloca los elementos en columna */
         align-items: center; /* Centra los elementos horizontalmente */
+    }
+
+    .ventanaComidas-emergente {
+        width: fit-content;
+    }
+
+    #section-menu-semanal, #section-menu-quincenal, #section-menu-mensual {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .sectionMenu-content {
+        justify-content: center; /* Ajustado para centrar los elementos en dispositivos más pequeños */
     }
 }
