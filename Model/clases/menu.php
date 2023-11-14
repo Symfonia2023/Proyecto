@@ -129,6 +129,29 @@ public function obtenerNombresComidasMenu($idMenu) {
     return $nombresComidas;
 }
 
+public function obtenerIdComidas($idMenu) {
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "symfonia_bd";
+
+    $conn = mysqli_connect($servername, $username, $password, $database);
+
+    // Obtener IDs de las comidas asociadas al menú
+    $query = "SELECT id_comida FROM compone WHERE id_menu = $idMenu";
+    $result = mysqli_query($conn, $query);
+
+    $idComidas = [];
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        $idComidas[] = $row['id_comida'];
+    }
+
+    mysqli_close($conn);
+
+    return $idComidas;
+}
+
 
 
 // --------------------------------------------------------------

@@ -5,14 +5,46 @@ function main() {
     let login = $("#loginInput").val();
     let contrasenia = $("#contraseña").val();
 
-    let data = {
-        login: login,
-        contrasenia: contrasenia
+    let verificarDatos = validarDatos(login, contrasenia)
+    if (verificarDatos.length === 0) {
+        let data = {
+            login: login,
+            contrasenia: contrasenia
+        }
+        validarDatosLogin(data)
+    } else {
+        mostrarErrores(verificarDatos)
     }
 
-    validarDatosLogin(data)
+    
 }
 
+function validarDatos(login, contrasenia){
+    let formulariosIncorrectos = [];
+
+    if (validarLogin(login)) {
+        formulariosIncorrectos.push("login");
+    }
+    if (validarContrasenia(contrasenia)) {
+        formulariosIncorrectos.push("contraseña");
+    }
+
+    return formulariosIncorrectos;
+}
+function validarLogin(login) {
+    if (login.length > 100 || login.length < 2) {
+        return true;
+    } else {
+        return false;
+    }
+}
+function validarContrasenia(contrasenia) {
+    if (contrasenia.length > 20 || contrasenia.length < 6 || !/^[a-zA-Z0-9]+$/.test(contrasenia)) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 function validarDatosLogin(data) {
     $.ajax({
@@ -28,6 +60,9 @@ function validarDatosLogin(data) {
             } else if (response === 0) {
                 alert("Ingreso exitoso");
                 window.location.href = "../../../index.php";
+            } else if (response === 1) {
+                alert("Ingreso exitoso EMPLEADO");
+                window.location.href = "../../html/empleados/index-empleados.html";
             } else {
                 console.log(response);
                 mostrarErrores(response);

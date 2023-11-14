@@ -28,7 +28,7 @@
                 <td>
                     <form>
                         <select id="tipoDieta">
-                            <option value="opcion1">Normal</option>
+                            <option value="opcion1">Estandar</option>
                             <option value="opcion2">Vegetariano</option>
                             <option value="opcion3">Ovolactovegetariano</option>
                             <option value="opcion4">Celiaco</option>
@@ -43,7 +43,7 @@
     </table>
 
     <br><br><br>
-    <a href="index-empleados.html"><input type="button" value="Volver"></a>
+    <a href="index-empleados.php"><input type="button" value="Volver"></a>
 
 </body>
 </html>

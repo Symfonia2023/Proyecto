@@ -26,7 +26,11 @@ if (empty($formulariosVacios)) {
     $nuevoUsuario = new Usuario($datos->login, $datos->contrasenia);
     if (isset($_SESSION['usuario'])) {
         // El usuario está autenticado
-        echo json_encode(0); // Autenticación exitosa
+        if ($_SESSION["rol"] === "cliente") {
+            echo json_encode(0);
+        } else {
+            echo json_encode(1);
+        }
     } else {
         // El usuario no está autenticado
         echo json_encode('ERROR');

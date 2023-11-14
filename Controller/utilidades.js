@@ -127,7 +127,7 @@ function validarNombreJuridico(nombre_juridico) {
 function validarLogin(login) {
     login = login.trim(); // Eliminar espacios al principio y al final
     login = login.replace(/\s+/g, ' '); // Reemplazar múltiples espacios por uno solo
-    if (login.length > 30 || !/^[a-zA-Z0-9\s]+$/.test(login)) {
+    if (login.length > 100) {
         return true;
     } else {
         return false;

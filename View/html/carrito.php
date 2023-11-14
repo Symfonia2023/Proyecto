@@ -79,7 +79,7 @@
         <section class="mensaje">Necesita iniciar sesión <br>para proceder con el pago</section>
     </section>
 
-    <section class="carrito-container">
+<section class="carrito-container">
     <section class="carrito-section">
         <?php
 

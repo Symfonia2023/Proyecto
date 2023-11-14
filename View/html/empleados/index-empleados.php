@@ -11,17 +11,14 @@
 
   <nav>
         <ul>
-            <li class="nav-logo"><img src="../../resources/logo_web.svg" width="200px">SISVIANSA</li>
-        </ul>
-        <ul>
-            <li><a href="../login-registro/login.html"><input type="button" value="Salir" class="input-btn"></a></li>
+            <li><a href="../login-registro/login.php"><input type="button" value="Salir" class="input-btn"></a></li>
         </ul>
     </nav>
 
     <section class="section-pedidos">
       <input type="button" value="Actualizar Pedidos" class="input-btn" onclick="recargarPagina()">
-      <a href="abm-menus.html"><input type="button" value="ABM Menús" class="input-btn"></a>
-      <a href="abm-comidas.html"><input type="button" value="ABM Comidas" class="input-btn"></a>
+      <a href="abm-menus.php"><input type="button" value="ABM Menús" class="input-btn"></a>
+      <a href="abm-comidas.php"><input type="button" value="ABM Comidas" class="input-btn"></a>
     </section>
 
     <section class="section-control-menus">

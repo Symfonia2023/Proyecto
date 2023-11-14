@@ -49,18 +49,16 @@ function finalizarCompra(total) {
         data: JSON.stringify({ total: total }),
         success: function(response) {
             console.log(response)
-            if (response == 0) {
-                alert("SESSION")
+
+            
+            if (response == 1) {
+                $("#errorSession").fadeIn().delay(1200).fadeOut();
             } else {
-                $("#errorSession").fadeIn().delay(5000).fadeOut();
+                location.reload();
             }
         },
         error: function(jqXHR, textStatus, errorThrown) {
             console.log("Error en la llamada AJAX:", textStatus, errorThrown);
         }
     });
-}
-
-function mensajeErrorSession() {
-
 }
