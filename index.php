@@ -69,7 +69,7 @@
     </nav>
 
     <section class="section-menu">
-        <p style="margin: 1rem 0 0 1.5rem;">Bienvenidos a Sisviansa</p>
+        <p style="margin: 1rem 0 0 1.5rem;">Bienvenidos a SISVIANSA</p>
     </section>
 
 
