@@ -9,6 +9,12 @@
 </head>
 <body>
 
+<?php
+  session_start();
+  if ($_SESSION["rol"] === "cliente") {
+    header("Location: ../../../index.php");
+  }
+?>
   <nav>
         <ul>
             <li><a href="../login-registro/login.php"><input type="button" value="Salir" class="input-btn"></a></li>
@@ -23,22 +29,13 @@
     </section>
 
     <section class="pedidos-container">
-      <section class="pedidos" style="height: 40px">
+      <section class="pedidos" style="height: 40px; font-size: large; border-bottom: 5px solid green; ">
         <section class="pedido-id">Id Pedido</section>
         <section class="pedido-nombre">Nombre menú</section>
         <section class="pedido-comidas">Comidas</section>
         <section class="pedido-estado">Estado</section>
         <section class="pedido-precio">Precio</section>
         <section class="pedido-botones"></section>
-      </section>
-
-      <section class="pedidos">
-        <section class="pedido-id">1</section>
-        <section class="pedido-nombre">SymfoCombo</section>
-        <section class="pedido-comidas">CUADRADO QUE CONTENGA TODAS LAS COMIDAS Y A LA DERECHA HAYA UN BOTON QUE DIGA"Finalizado" JUNTO A CADA COMIDA Y CUANDO TODAS LAS COMIDAS ESTEN EN VERDE SE PUEDE AVANZAR DE ESTADO</section>
-        <section class="pedido-estado">En produccion</section>
-        <section class="pedido-precio">$5.420</section>
-        <section class="pedido-botones"><button id="btnAvanzarEstado">Avanzar estado</button></section>
       </section>
 
     </section>

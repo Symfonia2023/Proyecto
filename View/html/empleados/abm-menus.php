@@ -14,7 +14,6 @@
         <thead>
             <tr>
                 <th>Nombre menú</th>
-                <th>ID menú</th>
                 <th>Stock mínimo</th>
                 <th>Stock máximo</th>
                 <th>Precio</th>
@@ -27,7 +26,6 @@
         <tbody id="cuerpoMenus">
             <tr id="formFila">
                 <td><input type="text" id="nombreMenu" placeholder="Nombre menú" required></td>
-                <td><input type="number" id="idMenu" placeholder="ID menú" required></td>
                 <td><input type="number" id="stockMinMenu" placeholder="Stock mínimo" required></td>
                 <td><input type="number" id="stockMaxMenu" placeholder="Stock máximo" required></td>
                 <td><input type="number" id="precioMenu" placeholder="Precio" required></td>
@@ -60,7 +58,7 @@
     </table>
 
     <br><br><br>
-    <a href="index-empleados.html"><input type="button" value="Volver"></a>
+    <a href="index-empleados.php"><input type="button" value="Volver"></a>
 
 </body>
 </html>

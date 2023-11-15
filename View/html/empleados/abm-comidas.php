@@ -14,7 +14,6 @@
         <thead>
             <tr>
                 <th>Nombre comida</th>
-                <th>ID comida</th>
                 <th>Tiempo Elaboración (minutos)</th>
                 <th>Tipo dieta</th>
                 <th>Acciones</th>
@@ -23,7 +22,6 @@
         <tbody id="cuerpoComidas">
             <tr id="formFila">
                 <td><input type="text" id="nombreComida" placeholder="Nombre comida" required></td>
-                <td><input type="number" id="idComida" placeholder="ID comida" required></td>
                 <td><input type="number" id="tiempoElaboracion" placeholder="Tiempo elaboración" required></td>
                 <td>
                     <form>

@@ -54,6 +54,7 @@ function finalizarCompra(total) {
             if (response == 1) {
                 $("#errorSession").fadeIn().delay(1200).fadeOut();
             } else {
+                alert("Compra realizada")
                 location.reload();
             }
         },
